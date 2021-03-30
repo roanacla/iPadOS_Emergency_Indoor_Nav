@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DBBA4D432612ACDE00A30E9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBA4D422612ACDE00A30E9F /* AppDelegate.swift */; };
+		DBBA4D452612ACDE00A30E9F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBA4D442612ACDE00A30E9F /* SceneDelegate.swift */; };
+		DBBA4D472612ACDE00A30E9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBA4D462612ACDE00A30E9F /* ViewController.swift */; };
+		DBBA4D4A2612ACDE00A30E9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBBA4D482612ACDE00A30E9F /* Main.storyboard */; };
+		DBBA4D4C2612ACDE00A30E9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBBA4D4B2612ACDE00A30E9F /* Assets.xcassets */; };
+		DBBA4D4F2612ACDE00A30E9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBBA4D4D2612ACDE00A30E9F /* LaunchScreen.storyboard */; };
+		DBBA4D5A2612ACDF00A30E9F /* iPadOS_Emergency_Indoor_NavTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBA4D592612ACDF00A30E9F /* iPadOS_Emergency_Indoor_NavTests.swift */; };
+		DBBA4D652612ACDF00A30E9F /* iPadOS_Emergency_Indoor_NavUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBA4D642612ACDF00A30E9F /* iPadOS_Emergency_Indoor_NavUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DBBA4D562612ACDF00A30E9F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DBBA4D372612ACDE00A30E9F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DBBA4D3E2612ACDE00A30E9F;
+			remoteInfo = iPadOS_Emergency_Indoor_Nav;
+		};
+		DBBA4D612612ACDF00A30E9F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DBBA4D372612ACDE00A30E9F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DBBA4D3E2612ACDE00A30E9F;
+			remoteInfo = iPadOS_Emergency_Indoor_Nav;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DBBA4D3F2612ACDE00A30E9F /* iPadOS_Emergency_Indoor_Nav.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPadOS_Emergency_Indoor_Nav.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBBA4D422612ACDE00A30E9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DBBA4D442612ACDE00A30E9F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		DBBA4D462612ACDE00A30E9F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DBBA4D492612ACDE00A30E9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DBBA4D4B2612ACDE00A30E9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DBBA4D4E2612ACDE00A30E9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DBBA4D502612ACDE00A30E9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBBA4D552612ACDF00A30E9F /* iPadOS_Emergency_Indoor_NavTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPadOS_Emergency_Indoor_NavTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBBA4D592612ACDF00A30E9F /* iPadOS_Emergency_Indoor_NavTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadOS_Emergency_Indoor_NavTests.swift; sourceTree = "<group>"; };
+		DBBA4D5B2612ACDF00A30E9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBBA4D602612ACDF00A30E9F /* iPadOS_Emergency_Indoor_NavUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPadOS_Emergency_Indoor_NavUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBBA4D642612ACDF00A30E9F /* iPadOS_Emergency_Indoor_NavUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadOS_Emergency_Indoor_NavUITests.swift; sourceTree = "<group>"; };
+		DBBA4D662612ACDF00A30E9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DBBA4D3C2612ACDE00A30E9F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBBA4D522612ACDF00A30E9F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBBA4D5D2612ACDF00A30E9F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DBBA4D362612ACDE00A30E9F = {
+			isa = PBXGroup;
+			children = (
+				DBBA4D412612ACDE00A30E9F /* iPadOS_Emergency_Indoor_Nav */,
+				DBBA4D582612ACDF00A30E9F /* iPadOS_Emergency_Indoor_NavTests */,
+				DBBA4D632612ACDF00A30E9F /* iPadOS_Emergency_Indoor_NavUITests */,
+				DBBA4D402612ACDE00A30E9F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DBBA4D402612ACDE00A30E9F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DBBA4D3F2612ACDE00A30E9F /* iPadOS_Emergency_Indoor_Nav.app */,
+				DBBA4D552612ACDF00A30E9F /* iPadOS_Emergency_Indoor_NavTests.xctest */,
+				DBBA4D602612ACDF00A30E9F /* iPadOS_Emergency_Indoor_NavUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DBBA4D412612ACDE00A30E9F /* iPadOS_Emergency_Indoor_Nav */ = {
+			isa = PBXGroup;
+			children = (
+				DBBA4D422612ACDE00A30E9F /* AppDelegate.swift */,
+				DBBA4D442612ACDE00A30E9F /* SceneDelegate.swift */,
+				DBBA4D462612ACDE00A30E9F /* ViewController.swift */,
+				DBBA4D482612ACDE00A30E9F /* Main.storyboard */,
+				DBBA4D4B2612ACDE00A30E9F /* Assets.xcassets */,
+				DBBA4D4D2612ACDE00A30E9F /* LaunchScreen.storyboard */,
+				DBBA4D502612ACDE00A30E9F /* Info.plist */,
+			);
+			path = iPadOS_Emergency_Indoor_Nav;
+			sourceTree = "<group>";
+		};
+		DBBA4D582612ACDF00A30E9F /* iPadOS_Emergency_Indoor_NavTests */ = {
+			isa = PBXGroup;
+			children = (
+				DBBA4D592612ACDF00A30E9F /* iPadOS_Emergency_Indoor_NavTests.swift */,
+				DBBA4D5B2612ACDF00A30E9F /* Info.plist */,
+			);
+			path = iPadOS_Emergency_Indoor_NavTests;
+			sourceTree = "<group>";
+		};
+		DBBA4D632612ACDF00A30E9F /* iPadOS_Emergency_Indoor_NavUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DBBA4D642612ACDF00A30E9F /* iPadOS_Emergency_Indoor_NavUITests.swift */,
+				DBBA4D662612ACDF00A30E9F /* Info.plist */,
+			);
+			path = iPadOS_Emergency_Indoor_NavUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DBBA4D3E2612ACDE00A30E9F /* iPadOS_Emergency_Indoor_Nav */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBBA4D692612ACDF00A30E9F /* Build configuration list for PBXNativeTarget "iPadOS_Emergency_Indoor_Nav" */;
+			buildPhases = (
+				DBBA4D3B2612ACDE00A30E9F /* Sources */,
+				DBBA4D3C2612ACDE00A30E9F /* Frameworks */,
+				DBBA4D3D2612ACDE00A30E9F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iPadOS_Emergency_Indoor_Nav;
+			productName = iPadOS_Emergency_Indoor_Nav;
+			productReference = DBBA4D3F2612ACDE00A30E9F /* iPadOS_Emergency_Indoor_Nav.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DBBA4D542612ACDF00A30E9F /* iPadOS_Emergency_Indoor_NavTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBBA4D6C2612ACDF00A30E9F /* Build configuration list for PBXNativeTarget "iPadOS_Emergency_Indoor_NavTests" */;
+			buildPhases = (
+				DBBA4D512612ACDF00A30E9F /* Sources */,
+				DBBA4D522612ACDF00A30E9F /* Frameworks */,
+				DBBA4D532612ACDF00A30E9F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DBBA4D572612ACDF00A30E9F /* PBXTargetDependency */,
+			);
+			name = iPadOS_Emergency_Indoor_NavTests;
+			productName = iPadOS_Emergency_Indoor_NavTests;
+			productReference = DBBA4D552612ACDF00A30E9F /* iPadOS_Emergency_Indoor_NavTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DBBA4D5F2612ACDF00A30E9F /* iPadOS_Emergency_Indoor_NavUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBBA4D6F2612ACDF00A30E9F /* Build configuration list for PBXNativeTarget "iPadOS_Emergency_Indoor_NavUITests" */;
+			buildPhases = (
+				DBBA4D5C2612ACDF00A30E9F /* Sources */,
+				DBBA4D5D2612ACDF00A30E9F /* Frameworks */,
+				DBBA4D5E2612ACDF00A30E9F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DBBA4D622612ACDF00A30E9F /* PBXTargetDependency */,
+			);
+			name = iPadOS_Emergency_Indoor_NavUITests;
+			productName = iPadOS_Emergency_Indoor_NavUITests;
+			productReference = DBBA4D602612ACDF00A30E9F /* iPadOS_Emergency_Indoor_NavUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DBBA4D372612ACDE00A30E9F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					DBBA4D3E2612ACDE00A30E9F = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					DBBA4D542612ACDF00A30E9F = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = DBBA4D3E2612ACDE00A30E9F;
+					};
+					DBBA4D5F2612ACDF00A30E9F = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = DBBA4D3E2612ACDE00A30E9F;
+					};
+				};
+			};
+			buildConfigurationList = DBBA4D3A2612ACDE00A30E9F /* Build configuration list for PBXProject "iPadOS_Emergency_Indoor_Nav" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DBBA4D362612ACDE00A30E9F;
+			productRefGroup = DBBA4D402612ACDE00A30E9F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DBBA4D3E2612ACDE00A30E9F /* iPadOS_Emergency_Indoor_Nav */,
+				DBBA4D542612ACDF00A30E9F /* iPadOS_Emergency_Indoor_NavTests */,
+				DBBA4D5F2612ACDF00A30E9F /* iPadOS_Emergency_Indoor_NavUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DBBA4D3D2612ACDE00A30E9F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBBA4D4F2612ACDE00A30E9F /* LaunchScreen.storyboard in Resources */,
+				DBBA4D4C2612ACDE00A30E9F /* Assets.xcassets in Resources */,
+				DBBA4D4A2612ACDE00A30E9F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBBA4D532612ACDF00A30E9F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBBA4D5E2612ACDF00A30E9F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DBBA4D3B2612ACDE00A30E9F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBBA4D472612ACDE00A30E9F /* ViewController.swift in Sources */,
+				DBBA4D432612ACDE00A30E9F /* AppDelegate.swift in Sources */,
+				DBBA4D452612ACDE00A30E9F /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBBA4D512612ACDF00A30E9F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBBA4D5A2612ACDF00A30E9F /* iPadOS_Emergency_Indoor_NavTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBBA4D5C2612ACDF00A30E9F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DBBA4D652612ACDF00A30E9F /* iPadOS_Emergency_Indoor_NavUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DBBA4D572612ACDF00A30E9F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DBBA4D3E2612ACDE00A30E9F /* iPadOS_Emergency_Indoor_Nav */;
+			targetProxy = DBBA4D562612ACDF00A30E9F /* PBXContainerItemProxy */;
+		};
+		DBBA4D622612ACDF00A30E9F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DBBA4D3E2612ACDE00A30E9F /* iPadOS_Emergency_Indoor_Nav */;
+			targetProxy = DBBA4D612612ACDF00A30E9F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DBBA4D482612ACDE00A30E9F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DBBA4D492612ACDE00A30E9F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DBBA4D4D2612ACDE00A30E9F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DBBA4D4E2612ACDE00A30E9F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DBBA4D672612ACDF00A30E9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DBBA4D682612ACDF00A30E9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DBBA4D6A2612ACDF00A30E9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G3B2ACWEFM;
+				INFOPLIST_FILE = iPadOS_Emergency_Indoor_Nav/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alquimia.iPadOS-Emergency-Indoor-Nav";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DBBA4D6B2612ACDF00A30E9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G3B2ACWEFM;
+				INFOPLIST_FILE = iPadOS_Emergency_Indoor_Nav/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alquimia.iPadOS-Emergency-Indoor-Nav";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DBBA4D6D2612ACDF00A30E9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G3B2ACWEFM;
+				INFOPLIST_FILE = iPadOS_Emergency_Indoor_NavTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alquimia.iPadOS-Emergency-Indoor-NavTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iPadOS_Emergency_Indoor_Nav.app/iPadOS_Emergency_Indoor_Nav";
+			};
+			name = Debug;
+		};
+		DBBA4D6E2612ACDF00A30E9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G3B2ACWEFM;
+				INFOPLIST_FILE = iPadOS_Emergency_Indoor_NavTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alquimia.iPadOS-Emergency-Indoor-NavTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iPadOS_Emergency_Indoor_Nav.app/iPadOS_Emergency_Indoor_Nav";
+			};
+			name = Release;
+		};
+		DBBA4D702612ACDF00A30E9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G3B2ACWEFM;
+				INFOPLIST_FILE = iPadOS_Emergency_Indoor_NavUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alquimia.iPadOS-Emergency-Indoor-NavUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = iPadOS_Emergency_Indoor_Nav;
+			};
+			name = Debug;
+		};
+		DBBA4D712612ACDF00A30E9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G3B2ACWEFM;
+				INFOPLIST_FILE = iPadOS_Emergency_Indoor_NavUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alquimia.iPadOS-Emergency-Indoor-NavUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = iPadOS_Emergency_Indoor_Nav;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DBBA4D3A2612ACDE00A30E9F /* Build configuration list for PBXProject "iPadOS_Emergency_Indoor_Nav" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBBA4D672612ACDF00A30E9F /* Debug */,
+				DBBA4D682612ACDF00A30E9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBBA4D692612ACDF00A30E9F /* Build configuration list for PBXNativeTarget "iPadOS_Emergency_Indoor_Nav" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBBA4D6A2612ACDF00A30E9F /* Debug */,
+				DBBA4D6B2612ACDF00A30E9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBBA4D6C2612ACDF00A30E9F /* Build configuration list for PBXNativeTarget "iPadOS_Emergency_Indoor_NavTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBBA4D6D2612ACDF00A30E9F /* Debug */,
+				DBBA4D6E2612ACDF00A30E9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBBA4D6F2612ACDF00A30E9F /* Build configuration list for PBXNativeTarget "iPadOS_Emergency_Indoor_NavUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBBA4D702612ACDF00A30E9F /* Debug */,
+				DBBA4D712612ACDF00A30E9F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DBBA4D372612ACDE00A30E9F /* Project object */;
+}

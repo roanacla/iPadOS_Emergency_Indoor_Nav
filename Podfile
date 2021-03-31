@@ -6,6 +6,7 @@ target 'iPadOS_Emergency_Indoor_Nav' do
   use_frameworks!
   pod 'Amplify'
   pod 'AmplifyPlugins/AWSAPIPlugin'
+  pod 'AmplifyPlugins/AWSCognitoAuthPlugin'
 
   # Pods for iPadOS_Emergency_Indoor_Nav
 

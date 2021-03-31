@@ -15,6 +15,8 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    fetchCurrentAuthSession()
+      .store(in: &subscriptions)
     getMobileUsers()
       .store(in: &subscriptions)
   }
@@ -35,6 +37,18 @@ class ViewController: UIViewController {
         case .failure(let error):
           print("Got failed result with \(error.errorDescription)")
         }
+      }
+  }
+  
+  func fetchCurrentAuthSession() -> AnyCancellable {
+    Amplify.Auth.fetchAuthSession().resultPublisher
+      .sink {
+        if case let .failure(authError) = $0 {
+          print("🔴 Fetch session failed with error \(authError)")
+        }
+      }
+      receiveValue: { session in
+        print("🟢 Is user signed in - \(session.isSignedIn)")
       }
   }
   

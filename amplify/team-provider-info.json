@@ -13,7 +13,9 @@
     },
     "categories": {
       "auth": {
-        "iosemergencyindoornaaee443a7": {}
+        "iosemergencyindoornaaee443a7": {
+          "hostedUIProviderCreds": "[]"
+        }
       }
     }
   }

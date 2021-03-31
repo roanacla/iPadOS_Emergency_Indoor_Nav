@@ -19,6 +19,29 @@ class ViewController: UIViewController {
       .store(in: &subscriptions)
     getMobileUsers()
       .store(in: &subscriptions)
+    
+//    signInWithWebUI()
+//      .store(in: &subscriptions)
+    
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    signInWithWebUI()
+      .store(in: &subscriptions)
+  }
+  
+  func signInWithWebUI() -> AnyCancellable {
+    Amplify.Auth.signInWithWebUI(presentationAnchor: UIApplication.shared.windows.first!)
+      .resultPublisher
+      .sink {
+        if case let .failure(authError) = $0 {
+          print("Sign in failed \(authError)")
+        }
+      }
+      receiveValue: { _ in
+        print("Sign in succeeded")
+      }
   }
   
   func getMobileUsers() -> AnyCancellable {

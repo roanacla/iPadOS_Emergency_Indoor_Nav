@@ -10,19 +10,90 @@
 		14A867A249545BD2C61A865A /* Pods_iPadOS_Emergency_Indoor_Nav.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBDA27C4F3020973A7A36B05 /* Pods_iPadOS_Emergency_Indoor_Nav.framework */; };
 		6D1F0F5D784A9E55434CB180 /* Pods_iPadOS_Emergency_Indoor_Nav_iPadOS_Emergency_Indoor_NavUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D192EF89D70DF670C6CC981C /* Pods_iPadOS_Emergency_Indoor_Nav_iPadOS_Emergency_Indoor_NavUITests.framework */; };
 		82099E32EC3E815443A03499 /* Pods_iPadOS_Emergency_Indoor_NavTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6806699D156C546DAC052A3D /* Pods_iPadOS_Emergency_Indoor_NavTests.framework */; };
+		DB9D0099261546630025269D /* Pulsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9D0098261546630025269D /* Pulsing.swift */; };
+		DB9D009F261547720025269D /* Beacons.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB9D009D261547720025269D /* Beacons.plist */; };
+		DB9D00A0261547720025269D /* SafeRegions.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB9D009E261547720025269D /* SafeRegions.plist */; };
+		DB9D00B3261547C20025269D /* MobileUserRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9D00A6261547C20025269D /* MobileUserRemoteAPI.swift */; };
+		DB9D00B4261547C20025269D /* MobileUserAmplifyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9D00A8261547C20025269D /* MobileUserAmplifyAPI.swift */; };
+		DB9D00B5261547C20025269D /* Beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9D00AA261547C20025269D /* Beacon.swift */; };
+		DB9D00B6261547C20025269D /* SafeRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9D00AB261547C20025269D /* SafeRegion.swift */; };
+		DB9D00B7261547C20025269D /* RemoteCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9D00AC261547C20025269D /* RemoteCommands.swift */; };
+		DB9D00B8261547C20025269D /* UpdateLocationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9D00AF261547C20025269D /* UpdateLocationUseCase.swift */; };
+		DB9D00B9261547C20025269D /* CreateUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9D00B0261547C20025269D /* CreateUserUseCase.swift */; };
+		DB9D00BA261547C20025269D /* UpdateDeviceTokenIdUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9D00B1261547C20025269D /* UpdateDeviceTokenIdUseCase.swift */; };
+		DB9D00BB261547C20025269D /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9D00B2261547C20025269D /* UseCase.swift */; };
+		DB9D00C0261549AC0025269D /* NameSpaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9D00BF261549AC0025269D /* NameSpaces.swift */; };
 		DB9F77BA2613F46E00FA362A /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = DB9F77B82613F46E00FA362A /* awsconfiguration.json */; };
 		DB9F77BB2613F46E00FA362A /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = DB9F77B92613F46E00FA362A /* amplifyconfiguration.json */; };
 		DB9F77C22613F53A00FA362A /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F77BF2613F53A00FA362A /* AmplifyModels.swift */; };
 		DB9F77C32613F53A00FA362A /* MobileUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F77C02613F53A00FA362A /* MobileUser.swift */; };
 		DB9F77C42613F53A00FA362A /* MobileUser+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F77C12613F53A00FA362A /* MobileUser+Schema.swift */; };
+		DB9F7815261542F600FA362A /* IndoorMapViewController+MKMapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7802261542F600FA362A /* IndoorMapViewController+MKMapViewDelegate.swift */; };
+		DB9F7816261542F600FA362A /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7803261542F600FA362A /* Styles.swift */; };
+		DB9F7817261542F600FA362A /* IMDFDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7804261542F600FA362A /* IMDFDecoder.swift */; };
+		DB9F7818261542F600FA362A /* IndoorMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7805261542F600FA362A /* IndoorMapViewController.swift */; };
+		DB9F7819261542F600FA362A /* PointAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7807261542F600FA362A /* PointAnnotationView.swift */; };
+		DB9F781A261542F600FA362A /* LevelPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7808261542F600FA362A /* LevelPickerView.swift */; };
+		DB9F781B261542F600FA362A /* LabelAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7809261542F600FA362A /* LabelAnnotationView.swift */; };
+		DB9F781C261542F600FA362A /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F780B261542F600FA362A /* Feature.swift */; };
+		DB9F781D261542F600FA362A /* Anchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F780C261542F600FA362A /* Anchor.swift */; };
+		DB9F781E261542F600FA362A /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F780D261542F600FA362A /* Venue.swift */; };
+		DB9F781F261542F600FA362A /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F780E261542F600FA362A /* Unit.swift */; };
+		DB9F7820261542F600FA362A /* Amenity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F780F261542F600FA362A /* Amenity.swift */; };
+		DB9F7821261542F600FA362A /* Occupant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7810261542F600FA362A /* Occupant.swift */; };
+		DB9F7822261542F600FA362A /* LocalizedName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7811261542F600FA362A /* LocalizedName.swift */; };
+		DB9F7823261542F600FA362A /* Opening.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7812261542F600FA362A /* Opening.swift */; };
+		DB9F7824261542F600FA362A /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7813261542F600FA362A /* Level.swift */; };
+		DB9F7825261542F600FA362A /* IndoorMapViewController+LocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7814261542F600FA362A /* IndoorMapViewController+LocationManagerDelegate.swift */; };
 		DBBA4D432612ACDE00A30E9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBA4D422612ACDE00A30E9F /* AppDelegate.swift */; };
 		DBBA4D452612ACDE00A30E9F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBA4D442612ACDE00A30E9F /* SceneDelegate.swift */; };
 		DBBA4D472612ACDE00A30E9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBA4D462612ACDE00A30E9F /* ViewController.swift */; };
 		DBBA4D4A2612ACDE00A30E9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBBA4D482612ACDE00A30E9F /* Main.storyboard */; };
-		DBBA4D4C2612ACDE00A30E9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBBA4D4B2612ACDE00A30E9F /* Assets.xcassets */; };
 		DBBA4D4F2612ACDE00A30E9F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBBA4D4D2612ACDE00A30E9F /* LaunchScreen.storyboard */; };
 		DBBA4D5A2612ACDF00A30E9F /* iPadOS_Emergency_Indoor_NavTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBA4D592612ACDF00A30E9F /* iPadOS_Emergency_Indoor_NavTests.swift */; };
 		DBBA4D652612ACDF00A30E9F /* iPadOS_Emergency_Indoor_NavUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBA4D642612ACDF00A30E9F /* iPadOS_Emergency_Indoor_NavUITests.swift */; };
+		DBF4121E26154F0000FC4A24 /* IMDFData in Resources */ = {isa = PBXBuildFile; fileRef = DBF4121D26154F0000FC4A24 /* IMDFData */; };
+		DBF4124B2615560B00FC4A24 /* W-16.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF412232615560B00FC4A24 /* W-16.gpx */; };
+		DBF4124C2615560B00FC4A24 /* R-D1.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF412242615560B00FC4A24 /* R-D1.gpx */; };
+		DBF4124D2615560B00FC4A24 /* W-1.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF412252615560B00FC4A24 /* W-1.gpx */; };
+		DBF4124E2615560B00FC4A24 /* W-17.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF412262615560B00FC4A24 /* W-17.gpx */; };
+		DBF4124F2615560B00FC4A24 /* W-15.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF412272615560B00FC4A24 /* W-15.gpx */; };
+		DBF412502615560B00FC4A24 /* W-3.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF412282615560B00FC4A24 /* W-3.gpx */; };
+		DBF412512615560B00FC4A24 /* R-H1.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF412292615560B00FC4A24 /* R-H1.gpx */; };
+		DBF412522615560B00FC4A24 /* R-D2.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF4122A2615560B00FC4A24 /* R-D2.gpx */; };
+		DBF412532615560B00FC4A24 /* W-2.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF4122B2615560B00FC4A24 /* W-2.gpx */; };
+		DBF412542615560B00FC4A24 /* W-14.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF4122C2615560B00FC4A24 /* W-14.gpx */; };
+		DBF412552615560B00FC4A24 /* W-10.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF4122D2615560B00FC4A24 /* W-10.gpx */; };
+		DBF412562615560B00FC4A24 /* W-6.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF4122E2615560B00FC4A24 /* W-6.gpx */; };
+		DBF412572615560B00FC4A24 /* R-I1.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF4122F2615560B00FC4A24 /* R-I1.gpx */; };
+		DBF412582615560B00FC4A24 /* W-7.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF412302615560B00FC4A24 /* W-7.gpx */; };
+		DBF412592615560B00FC4A24 /* W-11.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF412312615560B00FC4A24 /* W-11.gpx */; };
+		DBF4125A2615560B00FC4A24 /* W-13.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF412322615560B00FC4A24 /* W-13.gpx */; };
+		DBF4125B2615560B00FC4A24 /* W-5.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF412332615560B00FC4A24 /* W-5.gpx */; };
+		DBF4125C2615560B00FC4A24 /* R-E1.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF412342615560B00FC4A24 /* R-E1.gpx */; };
+		DBF4125D2615560B00FC4A24 /* W-4.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF412352615560B00FC4A24 /* W-4.gpx */; };
+		DBF4125E2615560B00FC4A24 /* W-12.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF412362615560B00FC4A24 /* W-12.gpx */; };
+		DBF4125F2615560B00FC4A24 /* R-N1.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF412372615560B00FC4A24 /* R-N1.gpx */; };
+		DBF412602615560B00FC4A24 /* R-B2.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF412382615560B00FC4A24 /* R-B2.gpx */; };
+		DBF412612615560B00FC4A24 /* R-B1.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF412392615560B00FC4A24 /* R-B1.gpx */; };
+		DBF412622615560B00FC4A24 /* R-C1.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF4123A2615560B00FC4A24 /* R-C1.gpx */; };
+		DBF412632615560B00FC4A24 /* R-C2.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF4123B2615560B00FC4A24 /* R-C2.gpx */; };
+		DBF412642615560B00FC4A24 /* R-M2.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF4123C2615560B00FC4A24 /* R-M2.gpx */; };
+		DBF412652615560B00FC4A24 /* R-A1.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF4123D2615560B00FC4A24 /* R-A1.gpx */; };
+		DBF412662615560B00FC4A24 /* R-M3.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF4123E2615560B00FC4A24 /* R-M3.gpx */; };
+		DBF412672615560B00FC4A24 /* R-M1.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF4123F2615560B00FC4A24 /* R-M1.gpx */; };
+		DBF412682615560B00FC4A24 /* R-A2.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF412402615560B00FC4A24 /* R-A2.gpx */; };
+		DBF412692615560B00FC4A24 /* W-23.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF412412615560B00FC4A24 /* W-23.gpx */; };
+		DBF4126A2615560B00FC4A24 /* W-9.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF412422615560B00FC4A24 /* W-9.gpx */; };
+		DBF4126B2615560B00FC4A24 /* R-F1.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF412432615560B00FC4A24 /* R-F1.gpx */; };
+		DBF4126C2615560B00FC4A24 /* W-8.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF412442615560B00FC4A24 /* W-8.gpx */; };
+		DBF4126D2615560B00FC4A24 /* W-22.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF412452615560B00FC4A24 /* W-22.gpx */; };
+		DBF4126E2615560B00FC4A24 /* W-20.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF412462615560B00FC4A24 /* W-20.gpx */; };
+		DBF4126F2615560B00FC4A24 /* W-21.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF412472615560B00FC4A24 /* W-21.gpx */; };
+		DBF412702615560B00FC4A24 /* W-19.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF412482615560B00FC4A24 /* W-19.gpx */; };
+		DBF412712615560B00FC4A24 /* W-18.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF412492615560B00FC4A24 /* W-18.gpx */; };
+		DBF412722615560B00FC4A24 /* R-G1.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF4124A2615560B00FC4A24 /* R-G1.gpx */; };
+		DBF4127A26155CE600FC4A24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBF4127926155CE600FC4A24 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,17 +122,46 @@
 		97E9543B91BC5925251438B6 /* Pods-iPadOS_Emergency_Indoor_NavTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPadOS_Emergency_Indoor_NavTests.release.xcconfig"; path = "Target Support Files/Pods-iPadOS_Emergency_Indoor_NavTests/Pods-iPadOS_Emergency_Indoor_NavTests.release.xcconfig"; sourceTree = "<group>"; };
 		CBDA27C4F3020973A7A36B05 /* Pods_iPadOS_Emergency_Indoor_Nav.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iPadOS_Emergency_Indoor_Nav.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D192EF89D70DF670C6CC981C /* Pods_iPadOS_Emergency_Indoor_Nav_iPadOS_Emergency_Indoor_NavUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iPadOS_Emergency_Indoor_Nav_iPadOS_Emergency_Indoor_NavUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB9D0098261546630025269D /* Pulsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pulsing.swift; sourceTree = "<group>"; };
+		DB9D009D261547720025269D /* Beacons.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Beacons.plist; sourceTree = "<group>"; };
+		DB9D009E261547720025269D /* SafeRegions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SafeRegions.plist; sourceTree = "<group>"; };
+		DB9D00A6261547C20025269D /* MobileUserRemoteAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileUserRemoteAPI.swift; sourceTree = "<group>"; };
+		DB9D00A8261547C20025269D /* MobileUserAmplifyAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileUserAmplifyAPI.swift; sourceTree = "<group>"; };
+		DB9D00AA261547C20025269D /* Beacon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beacon.swift; sourceTree = "<group>"; };
+		DB9D00AB261547C20025269D /* SafeRegion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeRegion.swift; sourceTree = "<group>"; };
+		DB9D00AC261547C20025269D /* RemoteCommands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteCommands.swift; sourceTree = "<group>"; };
+		DB9D00AF261547C20025269D /* UpdateLocationUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateLocationUseCase.swift; sourceTree = "<group>"; };
+		DB9D00B0261547C20025269D /* CreateUserUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateUserUseCase.swift; sourceTree = "<group>"; };
+		DB9D00B1261547C20025269D /* UpdateDeviceTokenIdUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateDeviceTokenIdUseCase.swift; sourceTree = "<group>"; };
+		DB9D00B2261547C20025269D /* UseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
+		DB9D00BF261549AC0025269D /* NameSpaces.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameSpaces.swift; sourceTree = "<group>"; };
 		DB9F77B82613F46E00FA362A /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = SOURCE_ROOT; };
 		DB9F77B92613F46E00FA362A /* amplifyconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = amplifyconfiguration.json; sourceTree = SOURCE_ROOT; };
-		DB9F77BF2613F53A00FA362A /* AmplifyModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AmplifyModels.swift; path = amplify/generated/models/AmplifyModels.swift; sourceTree = SOURCE_ROOT; };
-		DB9F77C02613F53A00FA362A /* MobileUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MobileUser.swift; path = amplify/generated/models/MobileUser.swift; sourceTree = SOURCE_ROOT; };
-		DB9F77C12613F53A00FA362A /* MobileUser+Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MobileUser+Schema.swift"; path = "amplify/generated/models/MobileUser+Schema.swift"; sourceTree = SOURCE_ROOT; };
+		DB9F77BF2613F53A00FA362A /* AmplifyModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AmplifyModels.swift; path = iPadOS_Emergency_Indoor_Nav/CoreLogic/DataStore/AmplifyModels.swift; sourceTree = SOURCE_ROOT; };
+		DB9F77C02613F53A00FA362A /* MobileUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MobileUser.swift; path = iPadOS_Emergency_Indoor_Nav/CoreLogic/DataStore/MobileUser.swift; sourceTree = SOURCE_ROOT; };
+		DB9F77C12613F53A00FA362A /* MobileUser+Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MobileUser+Schema.swift"; path = "iPadOS_Emergency_Indoor_Nav/CoreLogic/DataStore/MobileUser+Schema.swift"; sourceTree = SOURCE_ROOT; };
+		DB9F7802261542F600FA362A /* IndoorMapViewController+MKMapViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IndoorMapViewController+MKMapViewDelegate.swift"; sourceTree = "<group>"; };
+		DB9F7803261542F600FA362A /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		DB9F7804261542F600FA362A /* IMDFDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMDFDecoder.swift; sourceTree = "<group>"; };
+		DB9F7805261542F600FA362A /* IndoorMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndoorMapViewController.swift; sourceTree = "<group>"; };
+		DB9F7807261542F600FA362A /* PointAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointAnnotationView.swift; sourceTree = "<group>"; };
+		DB9F7808261542F600FA362A /* LevelPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelPickerView.swift; sourceTree = "<group>"; };
+		DB9F7809261542F600FA362A /* LabelAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelAnnotationView.swift; sourceTree = "<group>"; };
+		DB9F780B261542F600FA362A /* Feature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
+		DB9F780C261542F600FA362A /* Anchor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Anchor.swift; sourceTree = "<group>"; };
+		DB9F780D261542F600FA362A /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		DB9F780E261542F600FA362A /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
+		DB9F780F261542F600FA362A /* Amenity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Amenity.swift; sourceTree = "<group>"; };
+		DB9F7810261542F600FA362A /* Occupant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Occupant.swift; sourceTree = "<group>"; };
+		DB9F7811261542F600FA362A /* LocalizedName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedName.swift; sourceTree = "<group>"; };
+		DB9F7812261542F600FA362A /* Opening.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Opening.swift; sourceTree = "<group>"; };
+		DB9F7813261542F600FA362A /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		DB9F7814261542F600FA362A /* IndoorMapViewController+LocationManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IndoorMapViewController+LocationManagerDelegate.swift"; sourceTree = "<group>"; };
 		DBBA4D3F2612ACDE00A30E9F /* iPadOS_Emergency_Indoor_Nav.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPadOS_Emergency_Indoor_Nav.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBBA4D422612ACDE00A30E9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBBA4D442612ACDE00A30E9F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DBBA4D462612ACDE00A30E9F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DBBA4D492612ACDE00A30E9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DBBA4D4B2612ACDE00A30E9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBBA4D4E2612ACDE00A30E9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DBBA4D502612ACDE00A30E9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBBA4D552612ACDF00A30E9F /* iPadOS_Emergency_Indoor_NavTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPadOS_Emergency_Indoor_NavTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +170,48 @@
 		DBBA4D602612ACDF00A30E9F /* iPadOS_Emergency_Indoor_NavUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPadOS_Emergency_Indoor_NavUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBBA4D642612ACDF00A30E9F /* iPadOS_Emergency_Indoor_NavUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadOS_Emergency_Indoor_NavUITests.swift; sourceTree = "<group>"; };
 		DBBA4D662612ACDF00A30E9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBF4121D26154F0000FC4A24 /* IMDFData */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IMDFData; sourceTree = "<group>"; };
+		DBF412232615560B00FC4A24 /* W-16.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-16.gpx"; sourceTree = "<group>"; };
+		DBF412242615560B00FC4A24 /* R-D1.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-D1.gpx"; sourceTree = "<group>"; };
+		DBF412252615560B00FC4A24 /* W-1.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-1.gpx"; sourceTree = "<group>"; };
+		DBF412262615560B00FC4A24 /* W-17.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-17.gpx"; sourceTree = "<group>"; };
+		DBF412272615560B00FC4A24 /* W-15.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-15.gpx"; sourceTree = "<group>"; };
+		DBF412282615560B00FC4A24 /* W-3.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-3.gpx"; sourceTree = "<group>"; };
+		DBF412292615560B00FC4A24 /* R-H1.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-H1.gpx"; sourceTree = "<group>"; };
+		DBF4122A2615560B00FC4A24 /* R-D2.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-D2.gpx"; sourceTree = "<group>"; };
+		DBF4122B2615560B00FC4A24 /* W-2.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-2.gpx"; sourceTree = "<group>"; };
+		DBF4122C2615560B00FC4A24 /* W-14.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-14.gpx"; sourceTree = "<group>"; };
+		DBF4122D2615560B00FC4A24 /* W-10.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-10.gpx"; sourceTree = "<group>"; };
+		DBF4122E2615560B00FC4A24 /* W-6.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-6.gpx"; sourceTree = "<group>"; };
+		DBF4122F2615560B00FC4A24 /* R-I1.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-I1.gpx"; sourceTree = "<group>"; };
+		DBF412302615560B00FC4A24 /* W-7.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-7.gpx"; sourceTree = "<group>"; };
+		DBF412312615560B00FC4A24 /* W-11.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-11.gpx"; sourceTree = "<group>"; };
+		DBF412322615560B00FC4A24 /* W-13.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-13.gpx"; sourceTree = "<group>"; };
+		DBF412332615560B00FC4A24 /* W-5.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-5.gpx"; sourceTree = "<group>"; };
+		DBF412342615560B00FC4A24 /* R-E1.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-E1.gpx"; sourceTree = "<group>"; };
+		DBF412352615560B00FC4A24 /* W-4.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-4.gpx"; sourceTree = "<group>"; };
+		DBF412362615560B00FC4A24 /* W-12.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-12.gpx"; sourceTree = "<group>"; };
+		DBF412372615560B00FC4A24 /* R-N1.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-N1.gpx"; sourceTree = "<group>"; };
+		DBF412382615560B00FC4A24 /* R-B2.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-B2.gpx"; sourceTree = "<group>"; };
+		DBF412392615560B00FC4A24 /* R-B1.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-B1.gpx"; sourceTree = "<group>"; };
+		DBF4123A2615560B00FC4A24 /* R-C1.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-C1.gpx"; sourceTree = "<group>"; };
+		DBF4123B2615560B00FC4A24 /* R-C2.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-C2.gpx"; sourceTree = "<group>"; };
+		DBF4123C2615560B00FC4A24 /* R-M2.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-M2.gpx"; sourceTree = "<group>"; };
+		DBF4123D2615560B00FC4A24 /* R-A1.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-A1.gpx"; sourceTree = "<group>"; };
+		DBF4123E2615560B00FC4A24 /* R-M3.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-M3.gpx"; sourceTree = "<group>"; };
+		DBF4123F2615560B00FC4A24 /* R-M1.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-M1.gpx"; sourceTree = "<group>"; };
+		DBF412402615560B00FC4A24 /* R-A2.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-A2.gpx"; sourceTree = "<group>"; };
+		DBF412412615560B00FC4A24 /* W-23.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-23.gpx"; sourceTree = "<group>"; };
+		DBF412422615560B00FC4A24 /* W-9.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-9.gpx"; sourceTree = "<group>"; };
+		DBF412432615560B00FC4A24 /* R-F1.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-F1.gpx"; sourceTree = "<group>"; };
+		DBF412442615560B00FC4A24 /* W-8.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-8.gpx"; sourceTree = "<group>"; };
+		DBF412452615560B00FC4A24 /* W-22.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-22.gpx"; sourceTree = "<group>"; };
+		DBF412462615560B00FC4A24 /* W-20.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-20.gpx"; sourceTree = "<group>"; };
+		DBF412472615560B00FC4A24 /* W-21.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-21.gpx"; sourceTree = "<group>"; };
+		DBF412482615560B00FC4A24 /* W-19.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-19.gpx"; sourceTree = "<group>"; };
+		DBF412492615560B00FC4A24 /* W-18.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-18.gpx"; sourceTree = "<group>"; };
+		DBF4124A2615560B00FC4A24 /* R-G1.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-G1.gpx"; sourceTree = "<group>"; };
+		DBF4127926155CE600FC4A24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0B607BDFBC531854E7B643D /* Pods-iPadOS_Emergency_Indoor_Nav-iPadOS_Emergency_Indoor_NavUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPadOS_Emergency_Indoor_Nav-iPadOS_Emergency_Indoor_NavUITests.debug.xcconfig"; path = "Target Support Files/Pods-iPadOS_Emergency_Indoor_Nav-iPadOS_Emergency_Indoor_NavUITests/Pods-iPadOS_Emergency_Indoor_Nav-iPadOS_Emergency_Indoor_NavUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +266,106 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		DB9D00A4261547C20025269D /* CoreLogic */ = {
+			isa = PBXGroup;
+			children = (
+				DB9D00A5261547C20025269D /* APIs */,
+				DB9D00A9261547C20025269D /* Entity */,
+				DB9D00AD261547C20025269D /* DataStore */,
+				DB9D00AE261547C20025269D /* UseCases */,
+			);
+			path = CoreLogic;
+			sourceTree = "<group>";
+		};
+		DB9D00A5261547C20025269D /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				DB9D00A6261547C20025269D /* MobileUserRemoteAPI.swift */,
+				DB9D00A7261547C20025269D /* Amplify */,
+			);
+			path = APIs;
+			sourceTree = "<group>";
+		};
+		DB9D00A7261547C20025269D /* Amplify */ = {
+			isa = PBXGroup;
+			children = (
+				DB9D00A8261547C20025269D /* MobileUserAmplifyAPI.swift */,
+			);
+			path = Amplify;
+			sourceTree = "<group>";
+		};
+		DB9D00A9261547C20025269D /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				DB9D00AA261547C20025269D /* Beacon.swift */,
+				DB9D00AB261547C20025269D /* SafeRegion.swift */,
+				DB9D00AC261547C20025269D /* RemoteCommands.swift */,
+				DB9D00BF261549AC0025269D /* NameSpaces.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		DB9D00AD261547C20025269D /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				DB9F77BF2613F53A00FA362A /* AmplifyModels.swift */,
+				DB9F77C02613F53A00FA362A /* MobileUser.swift */,
+				DB9F77C12613F53A00FA362A /* MobileUser+Schema.swift */,
+			);
+			path = DataStore;
+			sourceTree = "<group>";
+		};
+		DB9D00AE261547C20025269D /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				DB9D00AF261547C20025269D /* UpdateLocationUseCase.swift */,
+				DB9D00B0261547C20025269D /* CreateUserUseCase.swift */,
+				DB9D00B1261547C20025269D /* UpdateDeviceTokenIdUseCase.swift */,
+				DB9D00B2261547C20025269D /* UseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		DB9F7801261542F600FA362A /* MapLogic */ = {
+			isa = PBXGroup;
+			children = (
+				DB9F7803261542F600FA362A /* Styles.swift */,
+				DB9F7804261542F600FA362A /* IMDFDecoder.swift */,
+				DB9F7805261542F600FA362A /* IndoorMapViewController.swift */,
+				DB9F7802261542F600FA362A /* IndoorMapViewController+MKMapViewDelegate.swift */,
+				DB9F7814261542F600FA362A /* IndoorMapViewController+LocationManagerDelegate.swift */,
+				DB9F7806261542F600FA362A /* Views */,
+				DB9F780A261542F600FA362A /* IMDFModel */,
+			);
+			path = MapLogic;
+			sourceTree = "<group>";
+		};
+		DB9F7806261542F600FA362A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DB9F7807261542F600FA362A /* PointAnnotationView.swift */,
+				DB9F7808261542F600FA362A /* LevelPickerView.swift */,
+				DB9F7809261542F600FA362A /* LabelAnnotationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DB9F780A261542F600FA362A /* IMDFModel */ = {
+			isa = PBXGroup;
+			children = (
+				DB9F780B261542F600FA362A /* Feature.swift */,
+				DB9F780C261542F600FA362A /* Anchor.swift */,
+				DB9F780D261542F600FA362A /* Venue.swift */,
+				DB9F780E261542F600FA362A /* Unit.swift */,
+				DB9F780F261542F600FA362A /* Amenity.swift */,
+				DB9F7810261542F600FA362A /* Occupant.swift */,
+				DB9F7811261542F600FA362A /* LocalizedName.swift */,
+				DB9F7812261542F600FA362A /* Opening.swift */,
+				DB9F7813261542F600FA362A /* Level.swift */,
+			);
+			path = IMDFModel;
+			sourceTree = "<group>";
+		};
 		DBBA4D362612ACDE00A30E9F = {
 			isa = PBXGroup;
 			children = (
@@ -149,18 +391,22 @@
 		DBBA4D412612ACDE00A30E9F /* iPadOS_Emergency_Indoor_Nav */ = {
 			isa = PBXGroup;
 			children = (
+				DBF412222615560B00FC4A24 /* Simulator Locations */,
 				DB9F77B92613F46E00FA362A /* amplifyconfiguration.json */,
 				DB9F77B82613F46E00FA362A /* awsconfiguration.json */,
-				DB9F77BF2613F53A00FA362A /* AmplifyModels.swift */,
-				DB9F77C02613F53A00FA362A /* MobileUser.swift */,
-				DB9F77C12613F53A00FA362A /* MobileUser+Schema.swift */,
 				DBBA4D422612ACDE00A30E9F /* AppDelegate.swift */,
 				DBBA4D442612ACDE00A30E9F /* SceneDelegate.swift */,
 				DBBA4D462612ACDE00A30E9F /* ViewController.swift */,
+				DB9D0098261546630025269D /* Pulsing.swift */,
+				DB9D00A4261547C20025269D /* CoreLogic */,
+				DB9F7801261542F600FA362A /* MapLogic */,
 				DBBA4D482612ACDE00A30E9F /* Main.storyboard */,
-				DBBA4D4B2612ACDE00A30E9F /* Assets.xcassets */,
 				DBBA4D4D2612ACDE00A30E9F /* LaunchScreen.storyboard */,
+				DBF4127926155CE600FC4A24 /* Assets.xcassets */,
+				DBF4121D26154F0000FC4A24 /* IMDFData */,
 				DBBA4D502612ACDE00A30E9F /* Info.plist */,
+				DB9D009D261547720025269D /* Beacons.plist */,
+				DB9D009E261547720025269D /* SafeRegions.plist */,
 			);
 			path = iPadOS_Emergency_Indoor_Nav;
 			sourceTree = "<group>";
@@ -181,6 +427,53 @@
 				DBBA4D662612ACDF00A30E9F /* Info.plist */,
 			);
 			path = iPadOS_Emergency_Indoor_NavUITests;
+			sourceTree = "<group>";
+		};
+		DBF412222615560B00FC4A24 /* Simulator Locations */ = {
+			isa = PBXGroup;
+			children = (
+				DBF412232615560B00FC4A24 /* W-16.gpx */,
+				DBF412242615560B00FC4A24 /* R-D1.gpx */,
+				DBF412252615560B00FC4A24 /* W-1.gpx */,
+				DBF412262615560B00FC4A24 /* W-17.gpx */,
+				DBF412272615560B00FC4A24 /* W-15.gpx */,
+				DBF412282615560B00FC4A24 /* W-3.gpx */,
+				DBF412292615560B00FC4A24 /* R-H1.gpx */,
+				DBF4122A2615560B00FC4A24 /* R-D2.gpx */,
+				DBF4122B2615560B00FC4A24 /* W-2.gpx */,
+				DBF4122C2615560B00FC4A24 /* W-14.gpx */,
+				DBF4122D2615560B00FC4A24 /* W-10.gpx */,
+				DBF4122E2615560B00FC4A24 /* W-6.gpx */,
+				DBF4122F2615560B00FC4A24 /* R-I1.gpx */,
+				DBF412302615560B00FC4A24 /* W-7.gpx */,
+				DBF412312615560B00FC4A24 /* W-11.gpx */,
+				DBF412322615560B00FC4A24 /* W-13.gpx */,
+				DBF412332615560B00FC4A24 /* W-5.gpx */,
+				DBF412342615560B00FC4A24 /* R-E1.gpx */,
+				DBF412352615560B00FC4A24 /* W-4.gpx */,
+				DBF412362615560B00FC4A24 /* W-12.gpx */,
+				DBF412372615560B00FC4A24 /* R-N1.gpx */,
+				DBF412382615560B00FC4A24 /* R-B2.gpx */,
+				DBF412392615560B00FC4A24 /* R-B1.gpx */,
+				DBF4123A2615560B00FC4A24 /* R-C1.gpx */,
+				DBF4123B2615560B00FC4A24 /* R-C2.gpx */,
+				DBF4123C2615560B00FC4A24 /* R-M2.gpx */,
+				DBF4123D2615560B00FC4A24 /* R-A1.gpx */,
+				DBF4123E2615560B00FC4A24 /* R-M3.gpx */,
+				DBF4123F2615560B00FC4A24 /* R-M1.gpx */,
+				DBF412402615560B00FC4A24 /* R-A2.gpx */,
+				DBF412412615560B00FC4A24 /* W-23.gpx */,
+				DBF412422615560B00FC4A24 /* W-9.gpx */,
+				DBF412432615560B00FC4A24 /* R-F1.gpx */,
+				DBF412442615560B00FC4A24 /* W-8.gpx */,
+				DBF412452615560B00FC4A24 /* W-22.gpx */,
+				DBF412462615560B00FC4A24 /* W-20.gpx */,
+				DBF412472615560B00FC4A24 /* W-21.gpx */,
+				DBF412482615560B00FC4A24 /* W-19.gpx */,
+				DBF412492615560B00FC4A24 /* W-18.gpx */,
+				DBF4124A2615560B00FC4A24 /* R-G1.gpx */,
+			);
+			path = "Simulator Locations";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,10 +584,53 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBF412662615560B00FC4A24 /* R-M3.gpx in Resources */,
+				DBF4126D2615560B00FC4A24 /* W-22.gpx in Resources */,
+				DBF4126A2615560B00FC4A24 /* W-9.gpx in Resources */,
+				DBF412632615560B00FC4A24 /* R-C2.gpx in Resources */,
+				DBF412542615560B00FC4A24 /* W-14.gpx in Resources */,
+				DBF4124F2615560B00FC4A24 /* W-15.gpx in Resources */,
+				DBF412502615560B00FC4A24 /* W-3.gpx in Resources */,
+				DBF4124B2615560B00FC4A24 /* W-16.gpx in Resources */,
+				DBF4125C2615560B00FC4A24 /* R-E1.gpx in Resources */,
+				DBF4125F2615560B00FC4A24 /* R-N1.gpx in Resources */,
+				DB9D00A0261547720025269D /* SafeRegions.plist in Resources */,
+				DBF412532615560B00FC4A24 /* W-2.gpx in Resources */,
+				DBF412722615560B00FC4A24 /* R-G1.gpx in Resources */,
+				DBF412592615560B00FC4A24 /* W-11.gpx in Resources */,
+				DBF412612615560B00FC4A24 /* R-B1.gpx in Resources */,
+				DBF412712615560B00FC4A24 /* W-18.gpx in Resources */,
+				DBF412552615560B00FC4A24 /* W-10.gpx in Resources */,
+				DBF4125D2615560B00FC4A24 /* W-4.gpx in Resources */,
+				DB9D009F261547720025269D /* Beacons.plist in Resources */,
+				DBF412702615560B00FC4A24 /* W-19.gpx in Resources */,
+				DBF412602615560B00FC4A24 /* R-B2.gpx in Resources */,
+				DBF4121E26154F0000FC4A24 /* IMDFData in Resources */,
+				DBF4125B2615560B00FC4A24 /* W-5.gpx in Resources */,
+				DBF412652615560B00FC4A24 /* R-A1.gpx in Resources */,
+				DBF412572615560B00FC4A24 /* R-I1.gpx in Resources */,
+				DBF412672615560B00FC4A24 /* R-M1.gpx in Resources */,
+				DBF4126E2615560B00FC4A24 /* W-20.gpx in Resources */,
 				DB9F77BA2613F46E00FA362A /* awsconfiguration.json in Resources */,
 				DBBA4D4F2612ACDE00A30E9F /* LaunchScreen.storyboard in Resources */,
+				DBF4126C2615560B00FC4A24 /* W-8.gpx in Resources */,
+				DBF4126F2615560B00FC4A24 /* W-21.gpx in Resources */,
 				DB9F77BB2613F46E00FA362A /* amplifyconfiguration.json in Resources */,
-				DBBA4D4C2612ACDE00A30E9F /* Assets.xcassets in Resources */,
+				DBF4126B2615560B00FC4A24 /* R-F1.gpx in Resources */,
+				DBF412642615560B00FC4A24 /* R-M2.gpx in Resources */,
+				DBF412682615560B00FC4A24 /* R-A2.gpx in Resources */,
+				DBF4124D2615560B00FC4A24 /* W-1.gpx in Resources */,
+				DBF412692615560B00FC4A24 /* W-23.gpx in Resources */,
+				DBF412522615560B00FC4A24 /* R-D2.gpx in Resources */,
+				DBF412562615560B00FC4A24 /* W-6.gpx in Resources */,
+				DBF4124C2615560B00FC4A24 /* R-D1.gpx in Resources */,
+				DBF412622615560B00FC4A24 /* R-C1.gpx in Resources */,
+				DBF4124E2615560B00FC4A24 /* W-17.gpx in Resources */,
+				DBF412512615560B00FC4A24 /* R-H1.gpx in Resources */,
+				DBF412582615560B00FC4A24 /* W-7.gpx in Resources */,
+				DBF4125E2615560B00FC4A24 /* W-12.gpx in Resources */,
+				DBF4125A2615560B00FC4A24 /* W-13.gpx in Resources */,
+				DBF4127A26155CE600FC4A24 /* Assets.xcassets in Resources */,
 				DBBA4D4A2612ACDE00A30E9F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,9 +760,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB9F77C32613F53A00FA362A /* MobileUser.swift in Sources */,
+				DB9F781D261542F600FA362A /* Anchor.swift in Sources */,
+				DB9D00B6261547C20025269D /* SafeRegion.swift in Sources */,
+				DB9D00C0261549AC0025269D /* NameSpaces.swift in Sources */,
 				DB9F77C22613F53A00FA362A /* AmplifyModels.swift in Sources */,
 				DBBA4D472612ACDE00A30E9F /* ViewController.swift in Sources */,
+				DB9D00B3261547C20025269D /* MobileUserRemoteAPI.swift in Sources */,
+				DB9D00B5261547C20025269D /* Beacon.swift in Sources */,
+				DB9F7817261542F600FA362A /* IMDFDecoder.swift in Sources */,
+				DB9F7819261542F600FA362A /* PointAnnotationView.swift in Sources */,
+				DB9D00B8261547C20025269D /* UpdateLocationUseCase.swift in Sources */,
+				DB9D00BA261547C20025269D /* UpdateDeviceTokenIdUseCase.swift in Sources */,
+				DB9D00B7261547C20025269D /* RemoteCommands.swift in Sources */,
+				DB9F7818261542F600FA362A /* IndoorMapViewController.swift in Sources */,
+				DB9F7825261542F600FA362A /* IndoorMapViewController+LocationManagerDelegate.swift in Sources */,
+				DB9D00B9261547C20025269D /* CreateUserUseCase.swift in Sources */,
+				DB9F7816261542F600FA362A /* Styles.swift in Sources */,
+				DB9D00B4261547C20025269D /* MobileUserAmplifyAPI.swift in Sources */,
 				DBBA4D432612ACDE00A30E9F /* AppDelegate.swift in Sources */,
+				DB9D0099261546630025269D /* Pulsing.swift in Sources */,
+				DB9F781E261542F600FA362A /* Venue.swift in Sources */,
+				DB9F781C261542F600FA362A /* Feature.swift in Sources */,
+				DB9F7820261542F600FA362A /* Amenity.swift in Sources */,
+				DB9F7824261542F600FA362A /* Level.swift in Sources */,
+				DB9F7815261542F600FA362A /* IndoorMapViewController+MKMapViewDelegate.swift in Sources */,
+				DB9F781A261542F600FA362A /* LevelPickerView.swift in Sources */,
+				DB9F7822261542F600FA362A /* LocalizedName.swift in Sources */,
+				DB9F7823261542F600FA362A /* Opening.swift in Sources */,
+				DB9D00BB261547C20025269D /* UseCase.swift in Sources */,
+				DB9F781F261542F600FA362A /* Unit.swift in Sources */,
+				DB9F781B261542F600FA362A /* LabelAnnotationView.swift in Sources */,
+				DB9F7821261542F600FA362A /* Occupant.swift in Sources */,
 				DBBA4D452612ACDE00A30E9F /* SceneDelegate.swift in Sources */,
 				DB9F77C42613F53A00FA362A /* MobileUser+Schema.swift in Sources */,
 			);

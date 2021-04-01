@@ -95,6 +95,11 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
       self.mapView.setVisibleMapRect(venueOverlay.boundingMapRect, edgePadding:
                                       UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20), animated: false)
       
+      // Centers the map the first time
+      let span = MKCoordinateSpan(latitudeDelta: 0.00275, longitudeDelta: 0.00275)
+      let myLocation = CLLocationCoordinate2DMake(37.32940846176404,-121.88905656337738)
+      let region = MKCoordinateRegion(center: myLocation, span: span)
+      mapView.setRegion(region, animated: true)
       // The map rotates to focus the building
       mapView.camera.heading = CLLocationDirection(330)
     }

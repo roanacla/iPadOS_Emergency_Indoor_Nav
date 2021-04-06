@@ -19,18 +19,61 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsBuildings="NO" showsCompass="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nic-9m-HFM">
                                 <rect key="frame" x="0.0" y="0.0" width="1180" height="800"/>
                             </mapView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1G7-r5-4jT">
+                                <rect key="frame" x="966" y="30" width="184" height="270"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emergency kind:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MfW-EJ-C5y">
+                                        <rect key="frame" x="0.0" y="0.0" width="184" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npi-e9-UY9">
+                                        <rect key="frame" x="0.0" y="30" width="184" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="50"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="People inside:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0o3-06-YJD">
+                                        <rect key="frame" x="0.0" y="90" width="184" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Skc-Yp-eiY">
+                                        <rect key="frame" x="0.0" y="120" width="184" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="50"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="People outside:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNU-78-3GC">
+                                        <rect key="frame" x="0.0" y="180" width="184" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRE-cx-MZ4">
+                                        <rect key="frame" x="0.0" y="210" width="184" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="50"/>
+                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="nic-9m-HFM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9Vq-5I-wGl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1G7-r5-4jT" secondAttribute="trailing" constant="30" id="KN9-uG-NfW"/>
                             <constraint firstItem="nic-9m-HFM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Mq0-Lu-N5R"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nic-9m-HFM" secondAttribute="bottom" id="Q2i-xG-clm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nic-9m-HFM" secondAttribute="trailing" id="bza-Us-GiH"/>
+                            <constraint firstItem="1G7-r5-4jT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="ow2-hp-7s3"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emergencyKindLabel" destination="npi-e9-UY9" id="Eav-x6-QWi"/>
                         <outlet property="mapView" destination="nic-9m-HFM" id="Hsd-Tc-lt4"/>
+                        <outlet property="peopleInsideLabel" destination="Skc-Yp-eiY" id="oau-e2-xIP"/>
+                        <outlet property="peopleOutsideLabel" destination="oRE-cx-MZ4" id="csI-VE-mo1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -39,6 +82,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -37,6 +37,18 @@ extension GraphQLRequest {
                                                  "token": token],
                                      responseType: JSONValue.self)
   }
+  
+  
+  static func updateMobileUserLocationSubscription() -> GraphQLRequest<JSONValue> {
+    let document = """
+      subscription MySubscription {
+        onUpdateMobileUser {
+          location
+        }
+      }
+    """
+    return GraphQLRequest<JSONValue>(document: document, responseType: JSONValue.self)
+  }
 }
 
 public struct MobileUserAmplifyAPI: MobileUserRemoteAPI {

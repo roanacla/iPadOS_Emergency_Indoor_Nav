@@ -16,6 +16,10 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
   @IBOutlet var mapView: MKMapView!
   let locationManager = CLLocationManager()
   @IBOutlet weak var trackMeButton: UIButton!
+  @IBOutlet weak var emergencyKindLabel: UILabel!
+  @IBOutlet weak var peopleInsideLabel: UILabel!
+  @IBOutlet weak var peopleOutsideLabel: UILabel!
+  
   
   //MARK: - Properties
   var currentLocation: CLLocation?
@@ -26,6 +30,9 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
     return (UIApplication.shared.delegate as! AppDelegate).beaconsDict
   }
   private var subscriptions = Set<AnyCancellable>()
+  var createSubscription: GraphQLSubscriptionOperation<MobileUser>?
+  var deleteSubscription: GraphQLSubscriptionOperation<MobileUser>?
+  var updateSubscription: GraphQLSubscriptionOperation<JSONValue>?
   var isTrackerEnabled = false {
     didSet {
       if isTrackerEnabled {
@@ -111,6 +118,21 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
     drawSafeArea()
     
     mapView.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(self.tapAction)))
+//    signInWithWebUI()
+//      .store(in: &subscriptions)
+//    fetchCurrentAuthSession()
+//      .store(in: &subscriptions)
+    getMobileUsers()
+      .store(in: &subscriptions)
+    establishCreateSubscription()
+    establishDeleteSubscription()
+    establishUpdateSubscription()
+//    subscribeChanges()
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+//    subscribeChanges()
   }
   
   @objc func tapAction(gesture: UITapGestureRecognizer) {
@@ -137,6 +159,9 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
   
   deinit {
     subscriptions.removeAll()
+    createSubscription?.cancel()
+    deleteSubscription?.cancel()
+    updateSubscription?.cancel()
   }
   
   //MARK: - IBActions
@@ -190,6 +215,116 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
     self.view.layer.insertSublayer(pulse, above: mapView.layer)
   }
   
+  func getMobileUsers() -> AnyCancellable {
+    Amplify.API
+      .query(request: .list(MobileUser.self))
+      .resultPublisher
+      .sink {
+        if case let .failure(error) = $0 {
+          print("Got failed event with error \(error)")
+        }
+      }
+      receiveValue: { result in
+        switch result {
+        case .success(let mobileUsers):
+          print("🟢 Successfully retrieved list of MobileUsers: \(mobileUsers)")
+          let numOutside = mobileUsers.filter{ $0.location == "W-16" }.count
+          let numInside = mobileUsers.count - numOutside
+          DispatchQueue.main.async {
+            self.peopleInsideLabel.text = "\(numInside)"
+            self.peopleOutsideLabel.text = "\(numOutside)"
+          }
+        case .failure(let error):
+          print("🔴 Got failed result trying to retrive MobileUsers with \(error.errorDescription)")
+        }
+      }
+  }
+  
+  func establishCreateSubscription() {
+    createSubscription = Amplify.API.subscribe(request: .subscription(of: MobileUser.self, type: .onCreate))
+    createSubscription?.subscriptionDataPublisher.sink {
+      if case let .failure(apiError) = $0 {
+        print("Subscription has terminated with \(apiError)")
+      } else {
+        print("Subscription has been closed successfully")
+      }
+    }
+    receiveValue: { result in
+      switch result {
+      case .success(let createdMobileUser):
+        print("🟢 Successfully got MobileUser from create subscription: \(createdMobileUser)")
+        self.getMobileUsers().store(in: &self.subscriptions)
+      case .failure(let error):
+        print("🔴 Got failed result from create subscription with \(error.errorDescription)")
+      }
+    }.store(in: &subscriptions)
+  }
+  
+  func establishDeleteSubscription() {
+    deleteSubscription = Amplify.API.subscribe(request: .subscription(of: MobileUser.self, type: .onDelete))
+    createSubscription?.subscriptionDataPublisher.sink {
+      if case let .failure(apiError) = $0 {
+        print("Subscription has terminated with \(apiError)")
+      } else {
+        print("Subscription has been closed successfully")
+      }
+    }
+    receiveValue: { result in
+      switch result {
+      case .success(let createdMobileUser):
+        print("🟢 Successfully remove MobileUser from delete subscription: \(createdMobileUser)")
+        self.getMobileUsers().store(in: &self.subscriptions)
+      case .failure(let error):
+        print("🔴 Got failed result from delete subscription with \(error.errorDescription)")
+      }
+    }.store(in: &subscriptions)
+  }
+  
+  func establishUpdateSubscription() {
+    updateSubscription = Amplify.API.subscribe(request: .updateMobileUserLocationSubscription())
+    
+    updateSubscription?.subscriptionDataPublisher.sink {
+      if case let .failure(apiError) = $0 {
+        print("Subscription has terminated with \(apiError)")
+      } else {
+        print("Subscription has been closed successfully")
+      }
+    }
+    receiveValue: { result in
+      switch result {
+      case .success(let updatedMobileUser):
+        print("🟢 Successfully got MobileUser from update subscription: \(updatedMobileUser)")
+        self.getMobileUsers().store(in: &self.subscriptions)
+      case .failure(let error):
+        print("🔴 Got failed result from update subscription with \(error.errorDescription)")
+      }
+    }.store(in: &subscriptions)
+  }
+  
+  func signInWithWebUI() -> AnyCancellable {
+    Amplify.Auth.signInWithWebUI(presentationAnchor: UIApplication.shared.windows.first!)
+      .resultPublisher
+      .sink {
+        if case let .failure(authError) = $0 {
+          print("Sign in failed \(authError)")
+        }
+      }
+      receiveValue: { _ in
+        print("Sign in succeeded")
+      }
+  }
+  
+  func fetchCurrentAuthSession() -> AnyCancellable {
+    Amplify.Auth.fetchAuthSession().resultPublisher
+      .sink {
+        if case let .failure(authError) = $0 {
+          print("🔴 Fetch session failed with error \(authError)")
+        }
+      }
+      receiveValue: { session in
+        print("🟢 Is user signed in - \(session.isSignedIn)")
+      }
+  }
   
   func drawSafeArea() {
     var points: [CLLocationCoordinate2D] = []

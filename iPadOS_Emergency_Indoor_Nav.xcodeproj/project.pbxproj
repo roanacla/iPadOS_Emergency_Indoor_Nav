@@ -13,7 +13,7 @@
 		DB9D0099261546630025269D /* Pulsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9D0098261546630025269D /* Pulsing.swift */; };
 		DB9D009F261547720025269D /* Beacons.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB9D009D261547720025269D /* Beacons.plist */; };
 		DB9D00A0261547720025269D /* SafeRegions.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB9D009E261547720025269D /* SafeRegions.plist */; };
-		DB9D00B3261547C20025269D /* MobileUserRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9D00A6261547C20025269D /* MobileUserRemoteAPI.swift */; };
+		DB9D00B3261547C20025269D /* RemoteAPIProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9D00A6261547C20025269D /* RemoteAPIProtocols.swift */; };
 		DB9D00B4261547C20025269D /* MobileUserAmplifyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9D00A8261547C20025269D /* MobileUserAmplifyAPI.swift */; };
 		DB9D00B5261547C20025269D /* Beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9D00AA261547C20025269D /* Beacon.swift */; };
 		DB9D00B6261547C20025269D /* SafeRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9D00AB261547C20025269D /* SafeRegion.swift */; };
@@ -58,6 +58,9 @@
 		DBE85003261D2B3400C848C3 /* MobileUser+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE84FFA261D2B3400C848C3 /* MobileUser+Schema.swift */; };
 		DBE85004261D2B3400C848C3 /* Building+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE84FFB261D2B3400C848C3 /* Building+Schema.swift */; };
 		DBE85005261D2B3400C848C3 /* IoT.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE84FFC261D2B3400C848C3 /* IoT.swift */; };
+		DBE85027261D3F1600C848C3 /* BuildingAmplifyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE85026261D3F1600C848C3 /* BuildingAmplifyAPI.swift */; };
+		DBE85049261E629000C848C3 /* IoTAmplifyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE85048261E629000C848C3 /* IoTAmplifyAPI.swift */; };
+		DBE8504E261E655A00C848C3 /* CRUDIoTUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE8504D261E655A00C848C3 /* CRUDIoTUseCase.swift */; };
 		DBF4121E26154F0000FC4A24 /* IMDFData in Resources */ = {isa = PBXBuildFile; fileRef = DBF4121D26154F0000FC4A24 /* IMDFData */; };
 		DBF4124B2615560B00FC4A24 /* W-16.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF412232615560B00FC4A24 /* W-16.gpx */; };
 		DBF4124C2615560B00FC4A24 /* R-D1.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF412242615560B00FC4A24 /* R-D1.gpx */; };
@@ -131,7 +134,7 @@
 		DB9D0098261546630025269D /* Pulsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pulsing.swift; sourceTree = "<group>"; };
 		DB9D009D261547720025269D /* Beacons.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Beacons.plist; sourceTree = "<group>"; };
 		DB9D009E261547720025269D /* SafeRegions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SafeRegions.plist; sourceTree = "<group>"; };
-		DB9D00A6261547C20025269D /* MobileUserRemoteAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileUserRemoteAPI.swift; sourceTree = "<group>"; };
+		DB9D00A6261547C20025269D /* RemoteAPIProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteAPIProtocols.swift; sourceTree = "<group>"; };
 		DB9D00A8261547C20025269D /* MobileUserAmplifyAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileUserAmplifyAPI.swift; sourceTree = "<group>"; };
 		DB9D00AA261547C20025269D /* Beacon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beacon.swift; sourceTree = "<group>"; };
 		DB9D00AB261547C20025269D /* SafeRegion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeRegion.swift; sourceTree = "<group>"; };
@@ -182,6 +185,9 @@
 		DBE84FFA261D2B3400C848C3 /* MobileUser+Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MobileUser+Schema.swift"; path = "amplify/generated/models/MobileUser+Schema.swift"; sourceTree = SOURCE_ROOT; };
 		DBE84FFB261D2B3400C848C3 /* Building+Schema.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Building+Schema.swift"; path = "amplify/generated/models/Building+Schema.swift"; sourceTree = SOURCE_ROOT; };
 		DBE84FFC261D2B3400C848C3 /* IoT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IoT.swift; path = amplify/generated/models/IoT.swift; sourceTree = SOURCE_ROOT; };
+		DBE85026261D3F1600C848C3 /* BuildingAmplifyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingAmplifyAPI.swift; sourceTree = "<group>"; };
+		DBE85048261E629000C848C3 /* IoTAmplifyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IoTAmplifyAPI.swift; sourceTree = "<group>"; };
+		DBE8504D261E655A00C848C3 /* CRUDIoTUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRUDIoTUseCase.swift; sourceTree = "<group>"; };
 		DBF4121D26154F0000FC4A24 /* IMDFData */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IMDFData; sourceTree = "<group>"; };
 		DBF412232615560B00FC4A24 /* W-16.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-16.gpx"; sourceTree = "<group>"; };
 		DBF412242615560B00FC4A24 /* R-D1.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-D1.gpx"; sourceTree = "<group>"; };
@@ -292,7 +298,7 @@
 		DB9D00A5261547C20025269D /* APIs */ = {
 			isa = PBXGroup;
 			children = (
-				DB9D00A6261547C20025269D /* MobileUserRemoteAPI.swift */,
+				DB9D00A6261547C20025269D /* RemoteAPIProtocols.swift */,
 				DB9D00A7261547C20025269D /* Amplify */,
 			);
 			path = APIs;
@@ -302,6 +308,8 @@
 			isa = PBXGroup;
 			children = (
 				DB9D00A8261547C20025269D /* MobileUserAmplifyAPI.swift */,
+				DBE85026261D3F1600C848C3 /* BuildingAmplifyAPI.swift */,
+				DBE85048261E629000C848C3 /* IoTAmplifyAPI.swift */,
 			);
 			path = Amplify;
 			sourceTree = "<group>";
@@ -340,6 +348,7 @@
 				DB9D00B0261547C20025269D /* CreateUserUseCase.swift */,
 				DB9D00B1261547C20025269D /* UpdateDeviceTokenIdUseCase.swift */,
 				DB9D00B2261547C20025269D /* UseCase.swift */,
+				DBE8504D261E655A00C848C3 /* CRUDIoTUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -781,7 +790,7 @@
 				DB9D00B6261547C20025269D /* SafeRegion.swift in Sources */,
 				DB9D00C0261549AC0025269D /* NameSpaces.swift in Sources */,
 				DBBA4D472612ACDE00A30E9F /* ViewController.swift in Sources */,
-				DB9D00B3261547C20025269D /* MobileUserRemoteAPI.swift in Sources */,
+				DB9D00B3261547C20025269D /* RemoteAPIProtocols.swift in Sources */,
 				DB9D00B5261547C20025269D /* Beacon.swift in Sources */,
 				DB9F7817261542F600FA362A /* IMDFDecoder.swift in Sources */,
 				DB9F7819261542F600FA362A /* PointAnnotationView.swift in Sources */,
@@ -790,10 +799,12 @@
 				DB9D00B8261547C20025269D /* UpdateLocationUseCase.swift in Sources */,
 				DB9D00BA261547C20025269D /* UpdateDeviceTokenIdUseCase.swift in Sources */,
 				DB9D00B7261547C20025269D /* RemoteCommands.swift in Sources */,
+				DBE8504E261E655A00C848C3 /* CRUDIoTUseCase.swift in Sources */,
 				DBE85000261D2B3400C848C3 /* Edge+Schema.swift in Sources */,
 				DB9F7818261542F600FA362A /* IndoorMapViewController.swift in Sources */,
 				DB9F7825261542F600FA362A /* IndoorMapViewController+LocationManagerDelegate.swift in Sources */,
 				DB9D00B9261547C20025269D /* CreateUserUseCase.swift in Sources */,
+				DBE85027261D3F1600C848C3 /* BuildingAmplifyAPI.swift in Sources */,
 				DB9F7816261542F600FA362A /* Styles.swift in Sources */,
 				DB9D00B4261547C20025269D /* MobileUserAmplifyAPI.swift in Sources */,
 				DBE85002261D2B3400C848C3 /* AmplifyModels.swift in Sources */,
@@ -810,6 +821,7 @@
 				DB9F7822261542F600FA362A /* LocalizedName.swift in Sources */,
 				DB9F7823261542F600FA362A /* Opening.swift in Sources */,
 				DB9D00BB261547C20025269D /* UseCase.swift in Sources */,
+				DBE85049261E629000C848C3 /* IoTAmplifyAPI.swift in Sources */,
 				DB9F781F261542F600FA362A /* Unit.swift in Sources */,
 				DBE85005261D2B3400C848C3 /* IoT.swift in Sources */,
 				DB9F781B261542F600FA362A /* LabelAnnotationView.swift in Sources */,

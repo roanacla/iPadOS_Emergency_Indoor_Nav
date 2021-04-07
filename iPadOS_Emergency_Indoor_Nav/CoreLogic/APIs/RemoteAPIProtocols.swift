@@ -9,6 +9,24 @@ import Foundation
 import Combine
 
 
+
+protocol BuildingRemoteAPI {
+  //Subscriptions
+  func create(id: String) -> AnyCancellable
+  
+  func get(id: String) -> AnyPublisher<Building?,Error>
+  func getEdges(id: String) -> AnyPublisher<[Edge]?,Error>
+  func getMobileUsers(id: String) -> AnyPublisher<[MobileUser]?,Error>
+}
+
+protocol EdgeRemoteAPI {
+  func create(id: String, sourceIoTId: String, destinationIoTId: String) -> AnyCancellable
+}
+
+protocol IoTRemoteAPI {
+  func create(id: String, name: String, number: Int, latitude: Double, longitud: Double) -> AnyCancellable
+}
+
 protocol MobileUserRemoteAPI {
   //Subscriptions
   func create(userID: String, tokenID: String) -> AnyCancellable

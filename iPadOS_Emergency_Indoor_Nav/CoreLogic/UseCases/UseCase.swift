@@ -8,6 +8,13 @@
 import Foundation
 import Combine
 
-public protocol UseCase {
+enum CRUDUseCase {
+  case create
+  case read
+  case update
+  case delete
+}
+
+protocol UseCase {
   func start() -> AnyCancellable
 }

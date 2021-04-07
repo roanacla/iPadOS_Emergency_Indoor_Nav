@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     } catch {
       print("An error occurred setting up Amplify: \(error)")
     }
-    
+//    loadBeacons() works
     return true
   }
 
@@ -84,7 +84,14 @@ extension AppDelegate {
             let longitude = property["Longitude"] as? NSNumber else { fatalError("Error reading data") }
       
       let beacon = Beacon(name: name, latitude: latitude.doubleValue, longitude: longitude.doubleValue)
-      beaconsDict[beacon.name] = beacon
+//      beaconsDict[beacon.name] = beacon
+      _ = CRUDIoTUseCase(id: UUID().uuidString,
+                     name: beacon.name,
+                     latitude: beacon.location.coordinate.latitude,
+                     longitude: beacon.location.coordinate.longitude,
+                     number: 0,
+                     remoteAPI: IoTAmplifyAPI())
+        .start()
     }
   }
   

@@ -96,21 +96,7 @@ extension IndoorMapViewController: CLLocationManagerDelegate {
     
     if status == .authorizedWhenInUse || status == .authorizedAlways {
       locationManager.startUpdatingLocation()
-      activateLocationServices()
     }
-    
-  }
-  
-  private func activateLocationServices() {
-    if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
-      for safeRegion in safeRegions {
-        let region = CLCircularRegion(center: safeRegion.location.coordinate, radius: 100.0, identifier: safeRegion.name)
-        region.notifyOnEntry = true
-        locationManager.startMonitoring(for: region)
-//        mapView.addOverlay(MKCircle(center: safeRegion.location.coordinate, radius: 100.0)) //draw safety circle
-      }
-    }
-    locationManager.startUpdatingLocation()
   }
   
   func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

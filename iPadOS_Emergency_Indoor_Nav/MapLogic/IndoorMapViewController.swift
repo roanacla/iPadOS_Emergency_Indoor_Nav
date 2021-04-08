@@ -23,12 +23,6 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
   
   //MARK: - Properties
   var currentLocation: CLLocation?
-  var safeRegions: [SafeRegion] {
-    return (UIApplication.shared.delegate as! AppDelegate).safeRegions
-  }
-  var beaconsDict: [String: Beacon] {
-    return (UIApplication.shared.delegate as! AppDelegate).beaconsDict
-  }
   private var subscriptions = Set<AnyCancellable>()
   var createSubscription: GraphQLSubscriptionOperation<MobileUser>?
   var deleteSubscription: GraphQLSubscriptionOperation<MobileUser>?
@@ -181,18 +175,19 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
   }
   
   private func loadDirections(path: [String]) { //e.i. ["W-10", "W-12", "W-15", "W-16"]
-    guard !path.isEmpty else { return }
-    var points: [CLLocationCoordinate2D] = []
-    
-    for node in path {
-      if let beacon = beaconsDict[node] {
-        points.append(CLLocationCoordinate2DMake(beacon.location.coordinate.latitude,
-                                                 beacon.location.coordinate.longitude))
-      }
-    }
-    
-    currentPathOverlay = MKPolyline(coordinates: &points, count: points.count)
-    mapView.addOverlay(currentPathOverlay)
+    print("🔴 This functionalify is not available for the iPad")
+//    guard !path.isEmpty else { return }
+//    var points: [CLLocationCoordinate2D] = []
+//
+//    for node in path {
+//      if let beacon = beaconsDict[node] {
+//        points.append(CLLocationCoordinate2DMake(beacon.location.coordinate.latitude,
+//                                                 beacon.location.coordinate.longitude))
+//      }
+//    }
+//
+//    currentPathOverlay = MKPolyline(coordinates: &points, count: points.count)
+//    mapView.addOverlay(currentPathOverlay)
   }
   
   private func startPulsationAnimation() -> Pulsing {

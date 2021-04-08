@@ -20,7 +20,7 @@ extension Building {
     
     model.fields(
       .id(),
-      .hasMany(building.edges, is: .optional, ofType: Edge.self, associatedWith: Edge.keys.building),
+      .hasMany(building.edges, is: .optional, ofType: Edge.self, associatedWith: Edge.keys.buildingId),
       .hasMany(building.mobileUsers, is: .optional, ofType: MobileUser.self, associatedWith: MobileUser.keys.buildingId)
     )
     }

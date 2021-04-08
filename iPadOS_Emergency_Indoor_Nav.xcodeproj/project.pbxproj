@@ -11,7 +11,7 @@
 		6D1F0F5D784A9E55434CB180 /* Pods_iPadOS_Emergency_Indoor_Nav_iPadOS_Emergency_Indoor_NavUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D192EF89D70DF670C6CC981C /* Pods_iPadOS_Emergency_Indoor_Nav_iPadOS_Emergency_Indoor_NavUITests.framework */; };
 		82099E32EC3E815443A03499 /* Pods_iPadOS_Emergency_Indoor_NavTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6806699D156C546DAC052A3D /* Pods_iPadOS_Emergency_Indoor_NavTests.framework */; };
 		DB9D0099261546630025269D /* Pulsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9D0098261546630025269D /* Pulsing.swift */; };
-		DB9D009F261547720025269D /* Beacons.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB9D009D261547720025269D /* Beacons.plist */; };
+		DB9D009F261547720025269D /* IoTs.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB9D009D261547720025269D /* IoTs.plist */; };
 		DB9D00A0261547720025269D /* SafeRegions.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB9D009E261547720025269D /* SafeRegions.plist */; };
 		DB9D00B3261547C20025269D /* RemoteAPIProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9D00A6261547C20025269D /* RemoteAPIProtocols.swift */; };
 		DB9D00B4261547C20025269D /* MobileUserAmplifyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9D00A8261547C20025269D /* MobileUserAmplifyAPI.swift */; };
@@ -61,6 +61,7 @@
 		DBE85027261D3F1600C848C3 /* BuildingAmplifyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE85026261D3F1600C848C3 /* BuildingAmplifyAPI.swift */; };
 		DBE85049261E629000C848C3 /* IoTAmplifyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE85048261E629000C848C3 /* IoTAmplifyAPI.swift */; };
 		DBE8504E261E655A00C848C3 /* CRUDIoTUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE8504D261E655A00C848C3 /* CRUDIoTUseCase.swift */; };
+		DBE85053261E954F00C848C3 /* EdgeAmplifyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE85052261E954F00C848C3 /* EdgeAmplifyAPI.swift */; };
 		DBF4121E26154F0000FC4A24 /* IMDFData in Resources */ = {isa = PBXBuildFile; fileRef = DBF4121D26154F0000FC4A24 /* IMDFData */; };
 		DBF4124B2615560B00FC4A24 /* W-16.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF412232615560B00FC4A24 /* W-16.gpx */; };
 		DBF4124C2615560B00FC4A24 /* R-D1.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF412242615560B00FC4A24 /* R-D1.gpx */; };
@@ -132,7 +133,7 @@
 		CBDA27C4F3020973A7A36B05 /* Pods_iPadOS_Emergency_Indoor_Nav.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iPadOS_Emergency_Indoor_Nav.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D192EF89D70DF670C6CC981C /* Pods_iPadOS_Emergency_Indoor_Nav_iPadOS_Emergency_Indoor_NavUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iPadOS_Emergency_Indoor_Nav_iPadOS_Emergency_Indoor_NavUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB9D0098261546630025269D /* Pulsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pulsing.swift; sourceTree = "<group>"; };
-		DB9D009D261547720025269D /* Beacons.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Beacons.plist; sourceTree = "<group>"; };
+		DB9D009D261547720025269D /* IoTs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = IoTs.plist; sourceTree = "<group>"; };
 		DB9D009E261547720025269D /* SafeRegions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SafeRegions.plist; sourceTree = "<group>"; };
 		DB9D00A6261547C20025269D /* RemoteAPIProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteAPIProtocols.swift; sourceTree = "<group>"; };
 		DB9D00A8261547C20025269D /* MobileUserAmplifyAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MobileUserAmplifyAPI.swift; sourceTree = "<group>"; };
@@ -188,6 +189,7 @@
 		DBE85026261D3F1600C848C3 /* BuildingAmplifyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingAmplifyAPI.swift; sourceTree = "<group>"; };
 		DBE85048261E629000C848C3 /* IoTAmplifyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IoTAmplifyAPI.swift; sourceTree = "<group>"; };
 		DBE8504D261E655A00C848C3 /* CRUDIoTUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRUDIoTUseCase.swift; sourceTree = "<group>"; };
+		DBE85052261E954F00C848C3 /* EdgeAmplifyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeAmplifyAPI.swift; sourceTree = "<group>"; };
 		DBF4121D26154F0000FC4A24 /* IMDFData */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IMDFData; sourceTree = "<group>"; };
 		DBF412232615560B00FC4A24 /* W-16.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-16.gpx"; sourceTree = "<group>"; };
 		DBF412242615560B00FC4A24 /* R-D1.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-D1.gpx"; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 				DB9D00A8261547C20025269D /* MobileUserAmplifyAPI.swift */,
 				DBE85026261D3F1600C848C3 /* BuildingAmplifyAPI.swift */,
 				DBE85048261E629000C848C3 /* IoTAmplifyAPI.swift */,
+				DBE85052261E954F00C848C3 /* EdgeAmplifyAPI.swift */,
 			);
 			path = Amplify;
 			sourceTree = "<group>";
@@ -432,7 +435,7 @@
 				DBF4127926155CE600FC4A24 /* Assets.xcassets */,
 				DBF4121D26154F0000FC4A24 /* IMDFData */,
 				DBBA4D502612ACDE00A30E9F /* Info.plist */,
-				DB9D009D261547720025269D /* Beacons.plist */,
+				DB9D009D261547720025269D /* IoTs.plist */,
 				DB9D009E261547720025269D /* SafeRegions.plist */,
 			);
 			path = iPadOS_Emergency_Indoor_Nav;
@@ -629,7 +632,7 @@
 				DBF412712615560B00FC4A24 /* W-18.gpx in Resources */,
 				DBF412552615560B00FC4A24 /* W-10.gpx in Resources */,
 				DBF4125D2615560B00FC4A24 /* W-4.gpx in Resources */,
-				DB9D009F261547720025269D /* Beacons.plist in Resources */,
+				DB9D009F261547720025269D /* IoTs.plist in Resources */,
 				DBF412702615560B00FC4A24 /* W-19.gpx in Resources */,
 				DBF412602615560B00FC4A24 /* R-B2.gpx in Resources */,
 				DBF4121E26154F0000FC4A24 /* IMDFData in Resources */,
@@ -814,6 +817,7 @@
 				DB9F781E261542F600FA362A /* Venue.swift in Sources */,
 				DB9F781C261542F600FA362A /* Feature.swift in Sources */,
 				DB9F7820261542F600FA362A /* Amenity.swift in Sources */,
+				DBE85053261E954F00C848C3 /* EdgeAmplifyAPI.swift in Sources */,
 				DBE84FFD261D2B3400C848C3 /* Edge.swift in Sources */,
 				DB9F7824261542F600FA362A /* Level.swift in Sources */,
 				DB9F7815261542F600FA362A /* IndoorMapViewController+MKMapViewDelegate.swift in Sources */,

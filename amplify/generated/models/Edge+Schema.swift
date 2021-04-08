@@ -6,7 +6,7 @@ extension Edge {
   // MARK: - CodingKeys 
    public enum CodingKeys: String, ModelKey {
     case id
-    case building
+    case buildingId
     case sourceIoTId
     case sourceIoT
     case destinationIoTId
@@ -24,7 +24,7 @@ extension Edge {
     
     model.fields(
       .id(),
-      .belongsTo(edge.building, is: .optional, ofType: Building.self, targetName: "buildingId"),
+      .field(edge.buildingId, is: .required, ofType: .string),
       .field(edge.sourceIoTId, is: .required, ofType: .string),
       .hasOne(edge.sourceIoT, is: .optional, ofType: IoT.self, associatedWith: IoT.keys.id),
       .field(edge.destinationIoTId, is: .required, ofType: .string),

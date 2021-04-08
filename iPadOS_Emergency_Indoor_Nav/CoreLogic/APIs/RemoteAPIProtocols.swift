@@ -20,7 +20,11 @@ protocol BuildingRemoteAPI {
 }
 
 protocol EdgeRemoteAPI {
-  func create(id: String, sourceIoTId: String, destinationIoTId: String) -> AnyCancellable
+  func create(id: String,
+              buildingId: String,
+              sourceIoTId: String,
+              destinationIoTId: String,
+              isActive: Bool) -> AnyCancellable
 }
 
 protocol IoTRemoteAPI {

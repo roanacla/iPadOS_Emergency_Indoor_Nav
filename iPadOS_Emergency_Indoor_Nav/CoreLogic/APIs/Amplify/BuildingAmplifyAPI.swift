@@ -59,14 +59,18 @@ public struct BuildingAmplifyAPI: BuildingRemoteAPI {
       .eraseToAnyPublisher()
   }
   
-  func getEdges(id: String) -> AnyPublisher<[Edge]?, Error> {
-    Amplify.API
-      .query(request: .list(Edge.self))
+  func getEdges(id: String) -> AnyPublisher<[Edge], Error> {
+    let edge = Edge.keys
+    let predicate = edge.buildingId == id
+    let result = Amplify.API
+      .query(request: .list(Edge.self, where: predicate))
       .resultPublisher
-      .tryMap { result -> [Edge]? in
+      .tryMap { result -> [Edge] in
         return try result.get()
       }
       .eraseToAnyPublisher()
+    
+    return result
   }
   
   func getMobileUsers(id: String) -> AnyPublisher<[MobileUser]?, Error> {

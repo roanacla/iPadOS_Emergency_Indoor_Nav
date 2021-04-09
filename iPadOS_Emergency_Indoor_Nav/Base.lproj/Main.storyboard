@@ -84,65 +84,16 @@
         <scene sceneID="fq3-5j-wV2">
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="AHz-qB-3pn" customClass="IoTSettingsTVC" customModule="iPadOS_Emergency_Indoor_Nav" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vf2-Yn-ZOC">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="vf2-Yn-ZOC">
                         <rect key="frame" x="0.0" y="0.0" width="420" height="820"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <sections>
-                            <tableViewSection headerTitle="Alarm Details" id="I7W-5S-tnN">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="e05-86-S0S">
-                                        <rect key="frame" x="0.0" y="28" width="420" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e05-86-S0S" id="0vo-3X-TE5">
-                                            <rect key="frame" x="100" y="0.0" width="320" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn on/off emergency alarm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aO8-eZ-rVU">
-                                                    <rect key="frame" x="16" y="11.5" width="220" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <switch opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="t3M-JU-Xju">
-                                                    <rect key="frame" x="255" y="6.5" width="51" height="31"/>
-                                                    <connections>
-                                                        <action selector="toggleAlarm:" destination="AHz-qB-3pn" eventType="valueChanged" id="xsd-Vg-jHo"/>
-                                                    </connections>
-                                                </switch>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="t3M-JU-Xju" secondAttribute="trailing" constant="16" id="6OG-J0-YVI"/>
-                                                <constraint firstItem="aO8-eZ-rVU" firstAttribute="centerY" secondItem="0vo-3X-TE5" secondAttribute="centerY" id="BMH-4s-YcI"/>
-                                                <constraint firstItem="aO8-eZ-rVU" firstAttribute="leading" secondItem="0vo-3X-TE5" secondAttribute="leadingMargin" id="Ij5-Tx-tTT"/>
-                                                <constraint firstItem="t3M-JU-Xju" firstAttribute="centerY" secondItem="0vo-3X-TE5" secondAttribute="centerY" id="xh5-SH-x0c"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="IoT Devices" id="ncN-c9-dE2">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="iZe-Zm-Bap">
-                                        <rect key="frame" x="0.0" y="127.5" width="420" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iZe-Zm-Bap" id="zqg-xI-JAg">
-                                            <rect key="frame" x="100" y="0.0" width="320" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="AHz-qB-3pn" id="1YV-Wh-oHv"/>
                             <outlet property="delegate" destination="AHz-qB-3pn" id="WiM-mx-w47"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="Tg7-Ae-NF0"/>
-                    <connections>
-                        <outlet property="alertSwitch" destination="t3M-JU-Xju" id="huo-eU-cOB"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rho-fY-c1s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -44,6 +44,10 @@
 		DB9F7823261542F600FA362A /* Opening.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7812261542F600FA362A /* Opening.swift */; };
 		DB9F7824261542F600FA362A /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7813261542F600FA362A /* Level.swift */; };
 		DB9F7825261542F600FA362A /* IndoorMapViewController+LocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7814261542F600FA362A /* IndoorMapViewController+LocationManagerDelegate.swift */; };
+		DBA27C332620C7BA0071C4AB /* AlertCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBA27C322620C7BA0071C4AB /* AlertCell.xib */; };
+		DBA27C382620C9050071C4AB /* AlertTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA27C372620C9050071C4AB /* AlertTableViewCell.swift */; };
+		DBA27C402620D1E70071C4AB /* IoTCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBA27C3F2620D1E70071C4AB /* IoTCell.xib */; };
+		DBA27C452620D2430071C4AB /* IoTTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA27C442620D2430071C4AB /* IoTTableViewCell.swift */; };
 		DBBA4D432612ACDE00A30E9F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBA4D422612ACDE00A30E9F /* AppDelegate.swift */; };
 		DBBA4D452612ACDE00A30E9F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBA4D442612ACDE00A30E9F /* SceneDelegate.swift */; };
 		DBBA4D472612ACDE00A30E9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBA4D462612ACDE00A30E9F /* ViewController.swift */; };
@@ -168,6 +172,10 @@
 		DB9F7812261542F600FA362A /* Opening.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Opening.swift; sourceTree = "<group>"; };
 		DB9F7813261542F600FA362A /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		DB9F7814261542F600FA362A /* IndoorMapViewController+LocationManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IndoorMapViewController+LocationManagerDelegate.swift"; sourceTree = "<group>"; };
+		DBA27C322620C7BA0071C4AB /* AlertCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertCell.xib; sourceTree = "<group>"; };
+		DBA27C372620C9050071C4AB /* AlertTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTableViewCell.swift; sourceTree = "<group>"; };
+		DBA27C3F2620D1E70071C4AB /* IoTCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IoTCell.xib; sourceTree = "<group>"; };
+		DBA27C442620D2430071C4AB /* IoTTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IoTTableViewCell.swift; sourceTree = "<group>"; };
 		DBBA4D3F2612ACDE00A30E9F /* iPadOS_Emergency_Indoor_Nav.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPadOS_Emergency_Indoor_Nav.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBBA4D422612ACDE00A30E9F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBBA4D442612ACDE00A30E9F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -293,6 +301,7 @@
 		DB6FFF79261FD2F100B75415 /* User Interface Logic */ = {
 			isa = PBXGroup;
 			children = (
+				DBA27C312620C78A0071C4AB /* Views */,
 				DB6FFF7A261FD31B00B75415 /* ViewControllers */,
 			);
 			path = "User Interface Logic";
@@ -415,6 +424,17 @@
 				DB9F7813261542F600FA362A /* Level.swift */,
 			);
 			path = IMDFModel;
+			sourceTree = "<group>";
+		};
+		DBA27C312620C78A0071C4AB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DBA27C322620C7BA0071C4AB /* AlertCell.xib */,
+				DBA27C372620C9050071C4AB /* AlertTableViewCell.swift */,
+				DBA27C3F2620D1E70071C4AB /* IoTCell.xib */,
+				DBA27C442620D2430071C4AB /* IoTTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		DBBA4D362612ACDE00A30E9F = {
@@ -666,6 +686,7 @@
 				DB9F77BA2613F46E00FA362A /* awsconfiguration.json in Resources */,
 				DBBA4D4F2612ACDE00A30E9F /* LaunchScreen.storyboard in Resources */,
 				DBF4126C2615560B00FC4A24 /* W-8.gpx in Resources */,
+				DBA27C402620D1E70071C4AB /* IoTCell.xib in Resources */,
 				DBF4126F2615560B00FC4A24 /* W-21.gpx in Resources */,
 				DB9F77BB2613F46E00FA362A /* amplifyconfiguration.json in Resources */,
 				DBF4126B2615560B00FC4A24 /* R-F1.gpx in Resources */,
@@ -677,6 +698,7 @@
 				DBF412562615560B00FC4A24 /* W-6.gpx in Resources */,
 				DBF4124C2615560B00FC4A24 /* R-D1.gpx in Resources */,
 				DBF412622615560B00FC4A24 /* R-C1.gpx in Resources */,
+				DBA27C332620C7BA0071C4AB /* AlertCell.xib in Resources */,
 				DBF4124E2615560B00FC4A24 /* W-17.gpx in Resources */,
 				DBF412512615560B00FC4A24 /* R-H1.gpx in Resources */,
 				DBF412582615560B00FC4A24 /* W-7.gpx in Resources */,
@@ -843,10 +865,12 @@
 				DBE84FFD261D2B3400C848C3 /* Edge.swift in Sources */,
 				DB9F7824261542F600FA362A /* Level.swift in Sources */,
 				DB6FFF90261FE12600B75415 /* BuildingUseCase.swift in Sources */,
+				DBA27C452620D2430071C4AB /* IoTTableViewCell.swift in Sources */,
 				DB9F7815261542F600FA362A /* IndoorMapViewController+MKMapViewDelegate.swift in Sources */,
 				DB9F781A261542F600FA362A /* LevelPickerView.swift in Sources */,
 				DB9F7822261542F600FA362A /* LocalizedName.swift in Sources */,
 				DB9F7823261542F600FA362A /* Opening.swift in Sources */,
+				DBA27C382620C9050071C4AB /* AlertTableViewCell.swift in Sources */,
 				DB9D00BB261547C20025269D /* UseCase.swift in Sources */,
 				DBE85049261E629000C848C3 /* IoTAmplifyAPI.swift in Sources */,
 				DB9F781F261542F600FA362A /* Unit.swift in Sources */,

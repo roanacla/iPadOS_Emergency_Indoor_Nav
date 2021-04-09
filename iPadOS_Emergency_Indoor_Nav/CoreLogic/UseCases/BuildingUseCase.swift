@@ -14,4 +14,7 @@ struct BuildingUseCase {
     return remoteAPI.updateIsInEmergency(id: id, isInEmergency: isInEmergency, description: description)
   }
   
+  func getAllEdges(remoteAPI: BuildingRemoteAPI, buildingId: String) -> AnyPublisher<[Edge],Error> {
+    return remoteAPI.getEdges(id: buildingId)
+  }
 }

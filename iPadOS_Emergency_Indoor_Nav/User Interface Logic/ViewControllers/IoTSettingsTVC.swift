@@ -11,12 +11,22 @@ import Combine
 class IoTSettingsTVC: UITableViewController {
   //MARK: - Properties
   private var combineSubscribers = Set<AnyCancellable>()
+  private var edgesPublisher: AnyPublisher<[Edge],Error>? {
+    return (UIApplication.shared.delegate as? AppDelegate)?.edgesPublisher
+  }
+  private var edges: [Edge] = []
   
   //MARK: - IBOutlets
   @IBOutlet weak var alertSwitch: UISwitch!
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    subscribeToRemoteEdges()
+    tableView.register(UINib(nibName: "AlertCell", bundle: nil), forCellReuseIdentifier: "AlertCell")
+    tableView.register(UINib(nibName: "IoTCell", bundle: nil), forCellReuseIdentifier: "IoTCell")
+    
+    
+    
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = false
     
@@ -24,14 +34,26 @@ class IoTSettingsTVC: UITableViewController {
     // self.navigationItem.rightBarButtonItem = self.editButtonItem
   }
   
-  // MARK: - IBActions
-  
-  @IBAction func toggleAlarm(_ sender: Any) {
-    let isInEmergency = (sender as! UISwitch).isOn
-    BuildingUseCase()
-      .toogleAlarm(remoteAPI: BuildingAmplifyAPI(), buildingID: "id001", isInEmergency: isInEmergency)
+  // MARK: - Functions
+  func subscribeToRemoteEdges() {
+    edgesPublisher?
+      .sink(receiveCompletion: { (completion) in
+        switch completion {
+        case .finished:
+          print("🟢 All edges retrieved")
+        case .failure:
+          print("🔴 Failure to retrieve edges")
+        }
+      }, receiveValue: {[weak self] (edges) in
+        guard let self = self else { return }
+        self.edges = edges
+        DispatchQueue.main.async {
+          self.tableView.reloadData()
+        }
+      })
       .store(in: &combineSubscribers)
   }
+  // MARK: - IBActions
   
   // MARK: - Table view data source
   
@@ -41,20 +63,43 @@ class IoTSettingsTVC: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    // #warning Incomplete implementation, return the number of rows
-    return 1
+    switch section {
+    case 0:
+      return 1
+    case 1:
+      return edges.count
+    default:
+      return 1
+    }
   }
   
   
-  /*
+  
    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-   let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-   
-   Configure the cell...
-   
-   return cell
+    switch indexPath.section {
+    case 0:
+      let cell = tableView.dequeueReusableCell(withIdentifier: "AlertCell", for: indexPath) as! AlertTableViewCell
+      cell.delegate = self
+      return cell
+    case 1:
+      let cell = tableView.dequeueReusableCell(withIdentifier: "IoTCell", for: indexPath) as! IoTTableViewCell
+      cell.cellLabel.text = "\(Int.random(in: 1..<48))"
+      return cell
+    default:
+      return UITableViewCell()
+    }
    }
-   */
+   
+  override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    switch section {
+    case 0:
+      return "Alarm Details"
+    case 1:
+      return "Iot Devices"
+    default:
+      return nil
+    }
+  }
   
   /*
    // Override to support conditional editing of the table view.
@@ -101,4 +146,23 @@ class IoTSettingsTVC: UITableViewController {
    }
    */
   
+}
+
+extension IoTSettingsTVC: AlertTableViewCellDelegate {
+  func didSwitched(cell: AlertTableViewCell, uiSwitch: UISwitch) {
+    let isInEmergency = uiSwitch.isOn
+    BuildingUseCase()
+      .toogleAlarm(remoteAPI: BuildingAmplifyAPI(), buildingID: "id001", isInEmergency: isInEmergency)
+      .store(in: &combineSubscribers)
+  }
+}
+
+extension IoTSettingsTVC: IoTTableViewCellDelegate {
+  func ioTCelldidSwitched(cell: IoTTableViewCell, uiSwitch: UISwitch) {
+    let isActive = uiSwitch.isOn
+    print("Did switched")
+//    BuildingUseCase()
+//      .toogleAlarm(remoteAPI: BuildingAmplifyAPI(), buildingID: "id001", isInEmergency: isActive)
+//      .store(in: &combineSubscribers)
+  }
 }

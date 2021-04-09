@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9er-4S-Fxa">
     <device id="ipad10_9rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -9,47 +9,47 @@
     </dependencies>
     <scenes>
         <!--Indoor Map View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="IMt-Ux-PPJ">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="IndoorMapViewController" customModule="iPadOS_Emergency_Indoor_Nav" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1180" height="820"/>
+                <viewController id="jIk-t7-bGU" customClass="IndoorMapViewController" customModule="iPadOS_Emergency_Indoor_Nav" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H1g-14-mc7">
+                        <rect key="frame" x="0.0" y="0.0" width="859.5" height="820"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsBuildings="NO" showsCompass="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nic-9m-HFM">
-                                <rect key="frame" x="0.0" y="0.0" width="1180" height="800"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsBuildings="NO" showsCompass="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4K-rs-cp3">
+                                <rect key="frame" x="0.0" y="0.0" width="859.5" height="820"/>
                             </mapView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1G7-r5-4jT">
-                                <rect key="frame" x="966" y="30" width="184" height="270"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nYz-4G-daq">
+                                <rect key="frame" x="645.5" y="80" width="184" height="270"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emergency kind:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MfW-EJ-C5y">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emergency kind:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BaN-33-gGB">
                                         <rect key="frame" x="0.0" y="0.0" width="184" height="30"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npi-e9-UY9">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3D-zv-eO8">
                                         <rect key="frame" x="0.0" y="30" width="184" height="60"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="50"/>
                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="People inside:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0o3-06-YJD">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="People inside:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beQ-wJ-dBJ">
                                         <rect key="frame" x="0.0" y="90" width="184" height="30"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Skc-Yp-eiY">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICF-S4-ygC">
                                         <rect key="frame" x="0.0" y="120" width="184" height="60"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="50"/>
                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="People outside:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNU-78-3GC">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="People outside:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXf-7F-DcN">
                                         <rect key="frame" x="0.0" y="180" width="184" height="30"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRE-cx-MZ4">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZV-Mk-xVe">
                                         <rect key="frame" x="0.0" y="210" width="184" height="60"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="50"/>
                                         <color key="textColor" systemColor="secondaryLabelColor"/>
@@ -58,27 +58,124 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="LcF-hw-17O"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="nic-9m-HFM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9Vq-5I-wGl"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1G7-r5-4jT" secondAttribute="trailing" constant="30" id="KN9-uG-NfW"/>
-                            <constraint firstItem="nic-9m-HFM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Mq0-Lu-N5R"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nic-9m-HFM" secondAttribute="bottom" id="Q2i-xG-clm"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nic-9m-HFM" secondAttribute="trailing" id="bza-Us-GiH"/>
-                            <constraint firstItem="1G7-r5-4jT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="ow2-hp-7s3"/>
+                            <constraint firstItem="S4K-rs-cp3" firstAttribute="leading" secondItem="H1g-14-mc7" secondAttribute="leading" id="ERL-5Z-4nu"/>
+                            <constraint firstItem="S4K-rs-cp3" firstAttribute="top" secondItem="H1g-14-mc7" secondAttribute="top" id="IQc-pm-EVa"/>
+                            <constraint firstItem="LcF-hw-17O" firstAttribute="trailing" secondItem="nYz-4G-daq" secondAttribute="trailing" constant="30" id="Kf0-cZ-v8k"/>
+                            <constraint firstAttribute="trailing" secondItem="S4K-rs-cp3" secondAttribute="trailing" id="bHc-eY-Rdm"/>
+                            <constraint firstItem="nYz-4G-daq" firstAttribute="top" secondItem="LcF-hw-17O" secondAttribute="top" constant="30" id="nNR-3U-bUP"/>
+                            <constraint firstAttribute="bottom" secondItem="S4K-rs-cp3" secondAttribute="bottom" id="t1F-i6-r51"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="emergencyKindLabel" destination="npi-e9-UY9" id="Eav-x6-QWi"/>
-                        <outlet property="mapView" destination="nic-9m-HFM" id="Hsd-Tc-lt4"/>
-                        <outlet property="peopleInsideLabel" destination="Skc-Yp-eiY" id="oau-e2-xIP"/>
-                        <outlet property="peopleOutsideLabel" destination="oRE-cx-MZ4" id="csI-VE-mo1"/>
+                        <outlet property="emergencyKindLabel" destination="b3D-zv-eO8" id="1us-Kw-IkE"/>
+                        <outlet property="mapView" destination="S4K-rs-cp3" id="bGL-8j-izF"/>
+                        <outlet property="peopleInsideLabel" destination="ICF-S4-ygC" id="prz-Vg-WJ9"/>
+                        <outlet property="peopleOutsideLabel" destination="rZV-Mk-xVe" id="xcd-kE-DSG"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J4m-Ma-OBv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="119"/>
+            <point key="canvasLocation" x="-599" y="-126"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="fq3-5j-wV2">
+            <objects>
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="AHz-qB-3pn" customClass="IoTSettingsTVC" customModule="iPadOS_Emergency_Indoor_Nav" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vf2-Yn-ZOC">
+                        <rect key="frame" x="0.0" y="0.0" width="420" height="820"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Alarm Details" id="I7W-5S-tnN">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="e05-86-S0S">
+                                        <rect key="frame" x="0.0" y="28" width="420" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e05-86-S0S" id="0vo-3X-TE5">
+                                            <rect key="frame" x="100" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn on/off emergency alarm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aO8-eZ-rVU">
+                                                    <rect key="frame" x="16" y="11.5" width="220" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="t3M-JU-Xju">
+                                                    <rect key="frame" x="255" y="6.5" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="toggleAlarm:" destination="AHz-qB-3pn" eventType="valueChanged" id="xsd-Vg-jHo"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="t3M-JU-Xju" secondAttribute="trailing" constant="16" id="6OG-J0-YVI"/>
+                                                <constraint firstItem="aO8-eZ-rVU" firstAttribute="centerY" secondItem="0vo-3X-TE5" secondAttribute="centerY" id="BMH-4s-YcI"/>
+                                                <constraint firstItem="aO8-eZ-rVU" firstAttribute="leading" secondItem="0vo-3X-TE5" secondAttribute="leadingMargin" id="Ij5-Tx-tTT"/>
+                                                <constraint firstItem="t3M-JU-Xju" firstAttribute="centerY" secondItem="0vo-3X-TE5" secondAttribute="centerY" id="xh5-SH-x0c"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="IoT Devices" id="ncN-c9-dE2">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="iZe-Zm-Bap">
+                                        <rect key="frame" x="0.0" y="127.5" width="420" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iZe-Zm-Bap" id="zqg-xI-JAg">
+                                            <rect key="frame" x="100" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="AHz-qB-3pn" id="1YV-Wh-oHv"/>
+                            <outlet property="delegate" destination="AHz-qB-3pn" id="WiM-mx-w47"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="Tg7-Ae-NF0"/>
+                    <connections>
+                        <outlet property="alertSwitch" destination="t3M-JU-Xju" id="huo-eU-cOB"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rho-fY-c1s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="104" y="-823"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="eCD-LC-fgc">
+            <objects>
+                <navigationController id="oMY-p9-oe7" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TuR-lg-Lu1">
+                        <rect key="frame" x="0.0" y="0.0" width="420" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="AHz-qB-3pn" kind="relationship" relationship="rootViewController" id="FC4-Fu-Hgc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CXq-hh-Vff" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-599" y="-823"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="JaP-lI-v1j">
+            <objects>
+                <splitViewController allowDoubleColumnStyle="YES" id="9er-4S-Fxa" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="oMY-p9-oe7" kind="relationship" relationship="masterViewController" id="1k4-hg-8Lz"/>
+                        <segue destination="jIk-t7-bGU" kind="relationship" relationship="detailViewController" id="M5e-dl-5AX"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LbY-Ra-c8B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1301" y="-520"/>
         </scene>
     </scenes>
     <resources>

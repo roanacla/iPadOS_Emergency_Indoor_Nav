@@ -9,6 +9,23 @@ import Foundation
 import Combine
 import Amplify
 
+extension GraphQLRequest {
+  static func updateBuildingEmergency(id: String, isInEmergency: Bool, emergencyDescription: String) -> GraphQLRequest<JSONValue> {
+    let document = """
+        mutation updateBuildingEmergency($id: ID!, $isInEmergency: Boolean, $emergencyDescription: String!) {
+          updateBuilding(input: {id: $id, isInEmergency: $isInEmergency, emergencyDescription: $emergencyDescription}) {
+            isInEmergency
+          }
+        }
+        """
+    return GraphQLRequest<JSONValue>(document: document,
+                                     variables: ["id": id,
+                                                 "isInEmergency": isInEmergency,
+                                                 "emergencyDescription": emergencyDescription],
+                                     responseType: JSONValue.self)
+  }
+}
+
 public struct BuildingAmplifyAPI: BuildingRemoteAPI {
   func create(id: String) -> AnyCancellable {
     let building = Building(id: id)
@@ -60,5 +77,23 @@ public struct BuildingAmplifyAPI: BuildingRemoteAPI {
         return try result.get()
       }
       .eraseToAnyPublisher()
+  }
+  
+  func updateIsInEmergency(id: String, isInEmergency: Bool, description: String) -> AnyCancellable {
+    return Amplify.API.mutate(request: .updateBuildingEmergency(id: id, isInEmergency: isInEmergency, emergencyDescription: description))
+      .resultPublisher
+      .sink {
+        if case let .failure(error) = $0 {
+          print("🔴 Failed to update building emergency \(error)")
+        }
+      }
+      receiveValue: { result in
+        switch result {
+        case .success(let building):
+          print("🟢 Successfully updated building status: \(building)")
+        case .failure(let error):
+          print("🔴 Got failed result updating device location \(error.errorDescription)")
+        }
+      }
   }
 }

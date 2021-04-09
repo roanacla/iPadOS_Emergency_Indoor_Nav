@@ -11,6 +11,8 @@
 		6D1F0F5D784A9E55434CB180 /* Pods_iPadOS_Emergency_Indoor_Nav_iPadOS_Emergency_Indoor_NavUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D192EF89D70DF670C6CC981C /* Pods_iPadOS_Emergency_Indoor_Nav_iPadOS_Emergency_Indoor_NavUITests.framework */; };
 		82099E32EC3E815443A03499 /* Pods_iPadOS_Emergency_Indoor_NavTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6806699D156C546DAC052A3D /* Pods_iPadOS_Emergency_Indoor_NavTests.framework */; };
 		DB6FFF55261FBE8800B75415 /* DataUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6FFF54261FBE8800B75415 /* DataUploader.swift */; };
+		DB6FFF75261FD2E800B75415 /* IoTSettingsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6FFF74261FD2E800B75415 /* IoTSettingsTVC.swift */; };
+		DB6FFF90261FE12600B75415 /* BuildingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6FFF8F261FE12600B75415 /* BuildingUseCase.swift */; };
 		DB9D0099261546630025269D /* Pulsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9D0098261546630025269D /* Pulsing.swift */; };
 		DB9D009F261547720025269D /* IoTs.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB9D009D261547720025269D /* IoTs.plist */; };
 		DB9D00A0261547720025269D /* SafeRegions.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB9D009E261547720025269D /* SafeRegions.plist */; };
@@ -133,6 +135,8 @@
 		CBDA27C4F3020973A7A36B05 /* Pods_iPadOS_Emergency_Indoor_Nav.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iPadOS_Emergency_Indoor_Nav.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D192EF89D70DF670C6CC981C /* Pods_iPadOS_Emergency_Indoor_Nav_iPadOS_Emergency_Indoor_NavUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iPadOS_Emergency_Indoor_Nav_iPadOS_Emergency_Indoor_NavUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB6FFF54261FBE8800B75415 /* DataUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUploader.swift; sourceTree = "<group>"; };
+		DB6FFF74261FD2E800B75415 /* IoTSettingsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IoTSettingsTVC.swift; sourceTree = "<group>"; };
+		DB6FFF8F261FE12600B75415 /* BuildingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingUseCase.swift; sourceTree = "<group>"; };
 		DB9D0098261546630025269D /* Pulsing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pulsing.swift; sourceTree = "<group>"; };
 		DB9D009D261547720025269D /* IoTs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = IoTs.plist; sourceTree = "<group>"; };
 		DB9D009E261547720025269D /* SafeRegions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SafeRegions.plist; sourceTree = "<group>"; };
@@ -286,6 +290,22 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		DB6FFF79261FD2F100B75415 /* User Interface Logic */ = {
+			isa = PBXGroup;
+			children = (
+				DB6FFF7A261FD31B00B75415 /* ViewControllers */,
+			);
+			path = "User Interface Logic";
+			sourceTree = "<group>";
+		};
+		DB6FFF7A261FD31B00B75415 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DB6FFF74261FD2E800B75415 /* IoTSettingsTVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		DB9D00A4261547C20025269D /* CoreLogic */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,6 +372,7 @@
 				DB9D00B2261547C20025269D /* UseCase.swift */,
 				DBE8504D261E655A00C848C3 /* CRUDIoTUseCase.swift */,
 				DB6FFF54261FBE8800B75415 /* DataUploader.swift */,
+				DB6FFF8F261FE12600B75415 /* BuildingUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -421,6 +442,7 @@
 		DBBA4D412612ACDE00A30E9F /* iPadOS_Emergency_Indoor_Nav */ = {
 			isa = PBXGroup;
 			children = (
+				DB6FFF79261FD2F100B75415 /* User Interface Logic */,
 				DBF412222615560B00FC4A24 /* Simulator Locations */,
 				DB9F77B92613F46E00FA362A /* amplifyconfiguration.json */,
 				DB9F77B82613F46E00FA362A /* awsconfiguration.json */,
@@ -812,6 +834,7 @@
 				DBE85002261D2B3400C848C3 /* AmplifyModels.swift in Sources */,
 				DBBA4D432612ACDE00A30E9F /* AppDelegate.swift in Sources */,
 				DBE84FFE261D2B3400C848C3 /* Building.swift in Sources */,
+				DB6FFF75261FD2E800B75415 /* IoTSettingsTVC.swift in Sources */,
 				DB9D0099261546630025269D /* Pulsing.swift in Sources */,
 				DB9F781E261542F600FA362A /* Venue.swift in Sources */,
 				DB9F781C261542F600FA362A /* Feature.swift in Sources */,
@@ -819,6 +842,7 @@
 				DBE85053261E954F00C848C3 /* EdgeAmplifyAPI.swift in Sources */,
 				DBE84FFD261D2B3400C848C3 /* Edge.swift in Sources */,
 				DB9F7824261542F600FA362A /* Level.swift in Sources */,
+				DB6FFF90261FE12600B75415 /* BuildingUseCase.swift in Sources */,
 				DB9F7815261542F600FA362A /* IndoorMapViewController+MKMapViewDelegate.swift in Sources */,
 				DB9F781A261542F600FA362A /* LevelPickerView.swift in Sources */,
 				DB9F7822261542F600FA362A /* LocalizedName.swift in Sources */,

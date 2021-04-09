@@ -1,5 +1,7 @@
 type Building @model {
     id: ID!
+    isInEmergency: Boolean
+    emergencyDescription: String
     edges: [Edge] @connection(keyName: "byBuilding", fields: ["id"])
     mobileUsers: [MobileUser] @connection(keyName: "byBuilding", fields: ["id"])
 }

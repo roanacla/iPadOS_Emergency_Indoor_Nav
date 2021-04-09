@@ -17,6 +17,7 @@ protocol BuildingRemoteAPI {
   func get(id: String) -> AnyPublisher<Building?,Error>
   func getEdges(id: String) -> AnyPublisher<[Edge]?,Error>
   func getMobileUsers(id: String) -> AnyPublisher<[MobileUser]?,Error>
+  func updateIsInEmergency(id: String, isInEmergency: Bool, description: String) -> AnyCancellable
 }
 
 protocol EdgeRemoteAPI {

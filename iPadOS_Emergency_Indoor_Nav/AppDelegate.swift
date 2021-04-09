@@ -14,6 +14,7 @@ import Combine
 class AppDelegate: UIResponder, UIApplicationDelegate {
   
   var edgesPublisher: AnyPublisher<[Edge],Error>?
+  var buildingPublisher: AnyPublisher<Building,Error>?
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     
@@ -25,7 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     } catch {
       print("An error occurred setting up Amplify: \(error)")
     }
-    self.edgesPublisher = self.getAllEdges()
+//    self.edgesPublisher = self.getAllEdges()
+    self.buildingPublisher = self.getBuildingWithNestedObjects()
     //Use the following line only to populate data on the cloud for the first time
 //    DataUploader.shared.uploadData()
     return true
@@ -50,5 +52,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func getAllEdges() -> AnyPublisher<[Edge],Error> {
     return BuildingUseCase().getAllEdges(remoteAPI: BuildingAmplifyAPI(),
                                          buildingId: "id001")
+  }
+  
+  func getBuildingWithNestedObjects() -> AnyPublisher<Building,Error> {
+    return BuildingUseCase().getBuildingWithNestedObjects(remoteAPI: BuildingAmplifyAPI(),
+                                                          buildingId: "id001")
   }
 }

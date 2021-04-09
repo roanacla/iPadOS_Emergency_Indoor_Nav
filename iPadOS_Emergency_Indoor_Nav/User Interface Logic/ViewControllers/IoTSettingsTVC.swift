@@ -14,6 +14,9 @@ class IoTSettingsTVC: UITableViewController {
   private var edgesPublisher: AnyPublisher<[Edge],Error>? {
     return (UIApplication.shared.delegate as? AppDelegate)?.edgesPublisher
   }
+  private var buildingPublisher: AnyPublisher<Building, Error>? {
+    return (UIApplication.shared.delegate as? AppDelegate)?.buildingPublisher
+  }
   private var edges: [Edge] = []
   
   //MARK: - IBOutlets
@@ -21,7 +24,8 @@ class IoTSettingsTVC: UITableViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    subscribeToRemoteEdges()
+//    subscribeToRemoteEdges()
+    subscribeToBuilding()
     tableView.register(UINib(nibName: "AlertCell", bundle: nil), forCellReuseIdentifier: "AlertCell")
     tableView.register(UINib(nibName: "IoTCell", bundle: nil), forCellReuseIdentifier: "IoTCell")
     
@@ -47,6 +51,27 @@ class IoTSettingsTVC: UITableViewController {
       }, receiveValue: {[weak self] (edges) in
         guard let self = self else { return }
         self.edges = edges
+        DispatchQueue.main.async {
+          self.tableView.reloadData()
+        }
+      })
+      .store(in: &combineSubscribers)
+  }
+  
+  func subscribeToBuilding() {
+    buildingPublisher?
+      .sink(receiveCompletion: { (completion) in
+        switch completion {
+        case .finished:
+          print("🟢 Building with nested objects retrieved")
+        case .failure:
+          print("🔴 Failure to retrieve Building with nested objects")
+        }
+      }, receiveValue: { [weak self] (building) in
+        guard let self = self else { return }
+//        print("🟢🟢")
+//        print(building)
+        self.edges = Array(building.edges!)
         DispatchQueue.main.async {
           self.tableView.reloadData()
         }
@@ -83,7 +108,9 @@ class IoTSettingsTVC: UITableViewController {
       return cell
     case 1:
       let cell = tableView.dequeueReusableCell(withIdentifier: "IoTCell", for: indexPath) as! IoTTableViewCell
-      cell.cellLabel.text = "\(Int.random(in: 1..<48))"
+      let sourceName = self.edges[indexPath.row].sourceIoT!.name!
+      let destinationName = self.edges[indexPath.row].destinationIoT!.name!
+      cell.cellLabel.text =  sourceName + " -> " + destinationName
       return cell
     default:
       return UITableViewCell()

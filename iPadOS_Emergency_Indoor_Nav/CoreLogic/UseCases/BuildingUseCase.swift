@@ -17,4 +17,8 @@ struct BuildingUseCase {
   func getAllEdges(remoteAPI: BuildingRemoteAPI, buildingId: String) -> AnyPublisher<[Edge],Error> {
     return remoteAPI.getEdges(id: buildingId)
   }
+  
+  func getBuildingWithNestedObjects(remoteAPI: BuildingRemoteAPI, buildingId: String) -> AnyPublisher<Building, Error> {
+    return remoteAPI.getBuildingWithNestedObjects(id: buildingId)
+  }
 }

@@ -24,6 +24,39 @@ extension GraphQLRequest {
                                                  "emergencyDescription": emergencyDescription],
                                      responseType: JSONValue.self)
   }
+  
+  static func getBuildingWithNestedObjects(buildingId: String) -> GraphQLRequest<Building> {
+    let operationName = "getBuilding"
+    let document = """
+                    query getBuilding($id: ID!) {
+                      \(operationName)(id: $id) {
+                          id
+                          emergencyDescription
+                          isInEmergency
+                          edges {
+                            items {
+                              id
+                              buildingId
+                              destinationIoTId
+                              sourceIoTId
+                              destinationIoT {
+                                id
+                                name
+                              }
+                              sourceIoT {
+                                id
+                                name
+                              }
+                            }
+                          }
+                        }
+                    }
+                    """
+    return GraphQLRequest<Building>(document: document,
+                                     variables: ["id": buildingId],
+                                     responseType: Building.self,
+                                     decodePath: operationName)
+  }
 }
 
 public struct BuildingAmplifyAPI: BuildingRemoteAPI {
@@ -66,6 +99,18 @@ public struct BuildingAmplifyAPI: BuildingRemoteAPI {
       .query(request: .list(Edge.self, where: predicate))
       .resultPublisher
       .tryMap { result -> [Edge] in
+        return try result.get()
+      }
+      .eraseToAnyPublisher()
+    
+    return result
+  }
+  
+  func getBuildingWithNestedObjects(id: String) -> AnyPublisher<Building, Error> {
+    let result = Amplify.API
+      .query(request: .getBuildingWithNestedObjects(buildingId: id))
+      .resultPublisher
+      .tryMap { result -> Building in
         return try result.get()
       }
       .eraseToAnyPublisher()

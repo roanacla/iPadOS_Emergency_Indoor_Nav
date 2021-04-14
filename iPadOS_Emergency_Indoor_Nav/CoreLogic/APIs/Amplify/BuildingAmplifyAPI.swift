@@ -33,12 +33,14 @@ extension GraphQLRequest {
                           id
                           emergencyDescription
                           isInEmergency
-                          edges {
+                          edges(filter: {canBeDeactivated: {eq: true}}) {
                             items {
                               id
                               buildingId
                               destinationIoTId
                               sourceIoTId
+                              canBeDeactivated
+                              isActive
                               destinationIoT {
                                 id
                                 name

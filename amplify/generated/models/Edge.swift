@@ -9,7 +9,8 @@ public struct Edge: Model {
   public var sourceIoT: IoT?
   public var destinationIoTId: String
   public var destinationIoT: IoT?
-  public var isActive: Bool?
+  public var isActive: Bool
+  public var canBeDeactivated: Bool
   
   public init(id: String = UUID().uuidString,
       buildingId: String,
@@ -17,7 +18,8 @@ public struct Edge: Model {
       sourceIoT: IoT? = nil,
       destinationIoTId: String,
       destinationIoT: IoT? = nil,
-      isActive: Bool? = nil) {
+      isActive: Bool,
+      canBeDeactivated: Bool) {
       self.id = id
       self.buildingId = buildingId
       self.sourceIoTId = sourceIoTId
@@ -25,5 +27,6 @@ public struct Edge: Model {
       self.destinationIoTId = destinationIoTId
       self.destinationIoT = destinationIoT
       self.isActive = isActive
+      self.canBeDeactivated = canBeDeactivated
   }
 }

@@ -13,7 +13,8 @@ type Edge @model @key(name: "byBuilding", fields: ["buildingId"]) {
     sourceIoT: IoT @connection(fields: ["sourceIoTId"])
     destinationIoTId: ID!
     destinationIoT: IoT @connection(fields: ["destinationIoTId"])
-    isActive: Boolean
+    isActive: Boolean!
+    canBeDeactivated: Boolean!
 }
 
 type IoT @model {

@@ -15,6 +15,9 @@ type Edge @model @key(name: "byBuilding", fields: ["buildingId"]) {
     destinationIoT: IoT @connection(fields: ["destinationIoTId"])
     isActive: Boolean!
     canBeDeactivated: Boolean!
+    name: String
+    latitude: Float
+    longitude: Float
 }
 
 type IoT @model {

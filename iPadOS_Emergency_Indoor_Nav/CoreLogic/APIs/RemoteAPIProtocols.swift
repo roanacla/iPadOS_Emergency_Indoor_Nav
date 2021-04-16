@@ -27,7 +27,10 @@ protocol EdgeRemoteAPI {
               sourceIoTId: String,
               destinationIoTId: String,
               isActive: Bool,
-              canBeDeactivated: Bool) -> AnyCancellable
+              canBeDeactivated: Bool,
+              name: String,
+              latitude: Double,
+              longitude: Double) -> AnyCancellable
 }
 
 protocol IoTRemoteAPI {

@@ -13,6 +13,9 @@ extension Edge {
     case destinationIoT
     case isActive
     case canBeDeactivated
+    case name
+    case latitude
+    case longitude
   }
   
   public static let keys = CodingKeys.self
@@ -31,7 +34,10 @@ extension Edge {
       .field(edge.destinationIoTId, is: .required, ofType: .string),
       .hasOne(edge.destinationIoT, is: .optional, ofType: IoT.self, associatedWith: IoT.keys.id),
       .field(edge.isActive, is: .required, ofType: .bool),
-      .field(edge.canBeDeactivated, is: .required, ofType: .bool)
+      .field(edge.canBeDeactivated, is: .required, ofType: .bool),
+      .field(edge.name, is: .optional, ofType: .string),
+      .field(edge.latitude, is: .optional, ofType: .double),
+      .field(edge.longitude, is: .optional, ofType: .double)
     )
     }
 }

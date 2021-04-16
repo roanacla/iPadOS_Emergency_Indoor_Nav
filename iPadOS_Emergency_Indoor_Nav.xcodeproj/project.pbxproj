@@ -462,6 +462,7 @@
 		DBBA4D412612ACDE00A30E9F /* iPadOS_Emergency_Indoor_Nav */ = {
 			isa = PBXGroup;
 			children = (
+				DB9D00A4261547C20025269D /* CoreLogic */,
 				DB6FFF79261FD2F100B75415 /* User Interface Logic */,
 				DBF412222615560B00FC4A24 /* Simulator Locations */,
 				DB9F77B92613F46E00FA362A /* amplifyconfiguration.json */,
@@ -470,7 +471,6 @@
 				DBBA4D442612ACDE00A30E9F /* SceneDelegate.swift */,
 				DBBA4D462612ACDE00A30E9F /* ViewController.swift */,
 				DB9D0098261546630025269D /* Pulsing.swift */,
-				DB9D00A4261547C20025269D /* CoreLogic */,
 				DB9F7801261542F600FA362A /* MapLogic */,
 				DBBA4D482612ACDE00A30E9F /* Main.storyboard */,
 				DBBA4D4D2612ACDE00A30E9F /* LaunchScreen.storyboard */,

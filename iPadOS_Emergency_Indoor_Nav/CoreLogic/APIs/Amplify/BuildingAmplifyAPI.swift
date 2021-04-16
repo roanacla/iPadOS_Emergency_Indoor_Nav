@@ -41,6 +41,9 @@ extension GraphQLRequest {
                               sourceIoTId
                               canBeDeactivated
                               isActive
+                              name
+                              latitude
+                              longitude
                               destinationIoT {
                                 id
                                 name

@@ -64,13 +64,11 @@ class IoTSettingsTVC: UITableViewController {
         switch completion {
         case .finished:
           print("🟢 Building with nested objects retrieved")
-        case .failure:
-          print("🔴 Failure to retrieve Building with nested objects")
+        case .failure(let error):
+          print("🔴 Failure to retrieve Building with nested objects \(error.localizedDescription)")
         }
       }, receiveValue: { [weak self] (building) in
         guard let self = self else { return }
-//        print("🟢🟢")
-//        print(building)
         self.edges = Array(building.edges!)
         DispatchQueue.main.async {
           self.tableView.reloadData()
@@ -108,9 +106,7 @@ class IoTSettingsTVC: UITableViewController {
       return cell
     case 1:
       let cell = tableView.dequeueReusableCell(withIdentifier: "IoTCell", for: indexPath) as! IoTTableViewCell
-      let sourceName = self.edges[indexPath.row].sourceIoT!.name!
-      let destinationName = self.edges[indexPath.row].destinationIoT!.name!
-      cell.cellLabel.text =  sourceName + " -> " + destinationName
+      cell.cellLabel.text = self.edges[indexPath.row].name?.replacingOccurrences(of: "B-", with: "Area ")
       return cell
     default:
       return UITableViewCell()

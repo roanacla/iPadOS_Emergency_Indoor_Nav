@@ -120,8 +120,8 @@ class DataUploader {
                  isActive: false,
                  canBeDeactivated: edge.2,
                  name: edge.3,
-                 latitude: edge.4,
-                 longitude: edge.5)
+                 latitude: edge.5,
+                 longitude: edge.4)
         .store(in: &combineSubscriptions)
     }
   }

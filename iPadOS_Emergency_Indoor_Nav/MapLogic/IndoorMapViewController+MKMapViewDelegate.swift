@@ -60,6 +60,19 @@ extension IndoorMapViewController: MKMapViewDelegate {
       return nil
     }
     
+    if let blockedArea = annotation as? BlockedArea {
+      var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "BlockedAreas") as? MKMarkerAnnotationView
+      if annotationView == nil {
+        annotationView = MKMarkerAnnotationView(annotation: blockedArea, reuseIdentifier: "BlockedAreas")
+      } else {
+        annotationView?.annotation = blockedArea
+      }
+      annotationView?.glyphText = "✅"
+      annotationView?.markerTintColor = UIColor.systemGreen
+      
+      return annotationView
+    }
+    
     if let stylableFeature = annotation as? StylableFeature {
       if stylableFeature is Occupant {
         let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: labelAnnotationViewIdentifier, for: annotation)

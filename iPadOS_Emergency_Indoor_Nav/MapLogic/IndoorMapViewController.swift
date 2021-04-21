@@ -42,6 +42,11 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
   var currentLevelAnnotations = [MKAnnotation]()
   let pointAnnotationViewIdentifier = "PointAnnotationView"
   let labelAnnotationViewIdentifier = "LabelAnnotationView"
+  private var buildingPublisher: AnyPublisher<Building, Error>? {
+    return (UIApplication.shared.delegate as? AppDelegate)?.buildingPublisher
+  }
+  private var edges: [Edge] = []
+  var blockedAreas: [BlockedArea] = []
   
   //MARK: - Animation Properties
   var pulseLayer: Pulsing?
@@ -121,7 +126,8 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
     establishCreateSubscription()
     establishDeleteSubscription()
     establishUpdateSubscription()
-//    subscribeChanges()
+    //Get all edges before adding annotations
+    subscribeToBuilding()
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -130,7 +136,6 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
   }
   
   @objc func tapAction(gesture: UITapGestureRecognizer) {
-    print("hello")
     if isTrackerEnabled {
       DispatchQueue.main.async {
         self.trackMe(self)
@@ -331,6 +336,30 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
     
     let safeAreaPolygon = MKPolygon(coordinates: &points, count: points.count)  
     mapView.addOverlay(safeAreaPolygon)
+  }
+  
+  func subscribeToBuilding() {
+    buildingPublisher?
+      .sink(receiveCompletion: { (completion) in
+        switch completion {
+        case .finished:
+          print("🟢 Building with nested objects retrieved for IndoorMapViewController))")
+          print(self.blockedAreas.count)
+          DispatchQueue.main.async {
+            self.mapView.addAnnotations(self.blockedAreas)
+          }
+        case .failure(let error):
+          print("🔴 Failure to retrieve Building with nested objects \(error.localizedDescription)")
+        }
+      }, receiveValue: { [weak self] (building) in
+        guard let self = self else { return }
+        self.edges = Array(building.edges!)
+        for edge in self.edges {
+          guard let latitude = edge.latitude, let longitude = edge.longitude else { continue }
+          self.blockedAreas.append(BlockedArea(latitude: latitude, longitude: longitude, name: edge.name))
+        }
+      })
+      .store(in: &subscriptions)
   }
   
   // MARK: - LevelPickerDelegate

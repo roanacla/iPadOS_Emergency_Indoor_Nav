@@ -37,6 +37,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="cellLabel" destination="ztL-X8-cRQ" id="Swt-et-TVB"/>
+                <outlet property="iotSwitch" destination="sC8-fP-7Ud" id="tFA-p4-gQV"/>
             </connections>
             <point key="canvasLocation" x="6" y="174"/>
         </tableViewCell>

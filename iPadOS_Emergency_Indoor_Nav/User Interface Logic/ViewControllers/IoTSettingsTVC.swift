@@ -107,6 +107,8 @@ class IoTSettingsTVC: UITableViewController {
     case 1:
       let cell = tableView.dequeueReusableCell(withIdentifier: "IoTCell", for: indexPath) as! IoTTableViewCell
       cell.cellLabel.text = self.edges[indexPath.row].name?.replacingOccurrences(of: "B-", with: "Area ")
+      cell.iotSwitch.isOn = self.edges[indexPath.row].isActive
+      cell.delegate = self
       return cell
     default:
       return UITableViewCell()
@@ -183,7 +185,7 @@ extension IoTSettingsTVC: AlertTableViewCellDelegate {
 extension IoTSettingsTVC: IoTTableViewCellDelegate {
   func ioTCelldidSwitched(cell: IoTTableViewCell, uiSwitch: UISwitch) {
     let isActive = uiSwitch.isOn
-    print("Did switched")
+    
 //    BuildingUseCase()
 //      .toogleAlarm(remoteAPI: BuildingAmplifyAPI(), buildingID: "id001", isInEmergency: isActive)
 //      .store(in: &combineSubscribers)

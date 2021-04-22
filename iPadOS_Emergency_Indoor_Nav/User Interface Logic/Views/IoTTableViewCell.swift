@@ -14,6 +14,7 @@ protocol IoTTableViewCellDelegate {
 class IoTTableViewCell: UITableViewCell {
   
   @IBOutlet weak var cellLabel: UILabel!
+  @IBOutlet weak var iotSwitch: UISwitch!
   
   var delegate: IoTTableViewCellDelegate?
   

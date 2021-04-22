@@ -356,7 +356,7 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
         self.edges = Array(building.edges!)
         for edge in self.edges {
           guard let latitude = edge.latitude, let longitude = edge.longitude else { continue }
-          self.blockedAreas.append(BlockedArea(latitude: latitude, longitude: longitude, name: edge.name))
+          self.blockedAreas.append(BlockedArea(latitude: latitude, longitude: longitude, name: edge.name, isActive: edge.isActive))
         }
       })
       .store(in: &subscriptions)

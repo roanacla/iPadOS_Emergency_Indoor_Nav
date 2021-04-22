@@ -11,35 +11,47 @@ import Combine
 class IoTSettingsTVC: UITableViewController {
   //MARK: - Properties
   private var combineSubscribers = Set<AnyCancellable>()
-  private var edges: [Edge] = []
+  private var edges: [Edge] = [] {
+    didSet {
+      tableView.reloadData()
+    }
+  }
+  private var viewModel: IoTSettingsViewModel!
   
   //MARK: - IBOutlets
   @IBOutlet weak var alertSwitch: UISwitch!
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.viewModel = IoTSettingsViewModel(buildingId: "id001")
     loadIoTs()
     tableView.register(UINib(nibName: "AlertCell", bundle: nil), forCellReuseIdentifier: "AlertCell")
     tableView.register(UINib(nibName: "IoTCell", bundle: nil), forCellReuseIdentifier: "IoTCell")
   }
   
   // MARK: - Functions
+//  func loadIoTs() {
+//    let remoteAPI = IoTAmplifyAPI()
+//    let subscription = remoteAPI.list(buildingId: "id001")
+//    subscription.sink { (completion) in
+//      switch completion {
+//      case .finished:
+//        print("🟢 All IoTs retrieved")
+//      case .failure(let error):
+//        print("🔴 Failure to retrieve IoTs\(error.localizedDescription)")
+//      }
+//    } receiveValue: { [weak self] (edges) in
+//      self?.edges = edges
+//      DispatchQueue.main.async {
+//        self?.tableView.reloadData()
+//      }
+//    }.store(in: &combineSubscribers)
+//  }
+  
   func loadIoTs() {
-    let remoteAPI = IoTAmplifyAPI()
-    let subscription = remoteAPI.list(buildingId: "id001")
-    subscription.sink { (completion) in
-      switch completion {
-      case .finished:
-        print("🟢 All IoTs retrieved")
-      case .failure(let error):
-        print("🔴 Failure to retrieve IoTs\(error.localizedDescription)")
-      }
-    } receiveValue: { [weak self] (edges) in
-      self?.edges = edges
-      DispatchQueue.main.async {
-        self?.tableView.reloadData()
-      }
-    }.store(in: &combineSubscribers)
+    viewModel.$edges
+      .receive(on: DispatchQueue.main)
+      .assign(to: \.edges, on: self).store(in: &combineSubscribers)
   }
   // MARK: - IBActions
   

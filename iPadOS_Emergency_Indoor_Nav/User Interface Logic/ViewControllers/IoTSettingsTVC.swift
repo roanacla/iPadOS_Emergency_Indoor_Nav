@@ -25,7 +25,8 @@ class IoTSettingsTVC: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 //    subscribeToRemoteEdges()
-    subscribeToBuilding()
+//    subscribeToBuilding()
+    downloadIoTs()
     tableView.register(UINib(nibName: "AlertCell", bundle: nil), forCellReuseIdentifier: "AlertCell")
     tableView.register(UINib(nibName: "IoTCell", bundle: nil), forCellReuseIdentifier: "IoTCell")
     
@@ -56,6 +57,24 @@ class IoTSettingsTVC: UITableViewController {
         }
       })
       .store(in: &combineSubscribers)
+  }
+  
+  func downloadIoTs() {
+    let remoteAPI = IoTAmplifyAPI()
+    let subscription = remoteAPI.list(buildingId: "id001")
+    subscription.sink { (completion) in
+      switch completion {
+      case .finished:
+        print("🟢 All IoTs retrieved")
+      case .failure(let error):
+        print("🔴 Failure to retrieve IoTs\(error.localizedDescription)")
+      }
+    } receiveValue: { [weak self] (edges) in
+      self?.edges = edges
+      DispatchQueue.main.async {
+        self?.tableView.reloadData()
+      }
+    }.store(in: &combineSubscribers)
   }
   
   func subscribeToBuilding() {

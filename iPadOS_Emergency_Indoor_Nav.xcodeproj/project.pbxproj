@@ -10,6 +10,7 @@
 		14A867A249545BD2C61A865A /* Pods_iPadOS_Emergency_Indoor_Nav.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBDA27C4F3020973A7A36B05 /* Pods_iPadOS_Emergency_Indoor_Nav.framework */; };
 		6D1F0F5D784A9E55434CB180 /* Pods_iPadOS_Emergency_Indoor_Nav_iPadOS_Emergency_Indoor_NavUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D192EF89D70DF670C6CC981C /* Pods_iPadOS_Emergency_Indoor_Nav_iPadOS_Emergency_Indoor_NavUITests.framework */; };
 		82099E32EC3E815443A03499 /* Pods_iPadOS_Emergency_Indoor_NavTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6806699D156C546DAC052A3D /* Pods_iPadOS_Emergency_Indoor_NavTests.framework */; };
+		DB01EDB42630FF80001CA346 /* IoTUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB01EDB32630FF80001CA346 /* IoTUseCases.swift */; };
 		DB075BDF262A536D004971E8 /* BlockedAreas.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB075BDE262A536D004971E8 /* BlockedAreas.swift */; };
 		DB6FFF55261FBE8800B75415 /* DataUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6FFF54261FBE8800B75415 /* DataUploader.swift */; };
 		DB6FFF75261FD2E800B75415 /* IoTSettingsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB6FFF74261FD2E800B75415 /* IoTSettingsTVC.swift */; };
@@ -139,6 +140,7 @@
 		97E9543B91BC5925251438B6 /* Pods-iPadOS_Emergency_Indoor_NavTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPadOS_Emergency_Indoor_NavTests.release.xcconfig"; path = "Target Support Files/Pods-iPadOS_Emergency_Indoor_NavTests/Pods-iPadOS_Emergency_Indoor_NavTests.release.xcconfig"; sourceTree = "<group>"; };
 		CBDA27C4F3020973A7A36B05 /* Pods_iPadOS_Emergency_Indoor_Nav.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iPadOS_Emergency_Indoor_Nav.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D192EF89D70DF670C6CC981C /* Pods_iPadOS_Emergency_Indoor_Nav_iPadOS_Emergency_Indoor_NavUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iPadOS_Emergency_Indoor_Nav_iPadOS_Emergency_Indoor_NavUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB01EDB32630FF80001CA346 /* IoTUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IoTUseCases.swift; sourceTree = "<group>"; };
 		DB075BDE262A536D004971E8 /* BlockedAreas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockedAreas.swift; sourceTree = "<group>"; };
 		DB6FFF54261FBE8800B75415 /* DataUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUploader.swift; sourceTree = "<group>"; };
 		DB6FFF74261FD2E800B75415 /* IoTSettingsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IoTSettingsTVC.swift; sourceTree = "<group>"; };
@@ -320,10 +322,10 @@
 		DB9D00A4261547C20025269D /* CoreLogic */ = {
 			isa = PBXGroup;
 			children = (
-				DB9D00A5261547C20025269D /* APIs */,
 				DB9D00A9261547C20025269D /* Entity */,
 				DB9D00AD261547C20025269D /* DataStore */,
 				DB9D00AE261547C20025269D /* UseCases */,
+				DB9D00A5261547C20025269D /* APIs */,
 			);
 			path = CoreLogic;
 			sourceTree = "<group>";
@@ -385,6 +387,7 @@
 				DBE8504D261E655A00C848C3 /* CRUDIoTUseCase.swift */,
 				DB6FFF54261FBE8800B75415 /* DataUploader.swift */,
 				DB6FFF8F261FE12600B75415 /* BuildingUseCase.swift */,
+				DB01EDB32630FF80001CA346 /* IoTUseCases.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -854,6 +857,7 @@
 				DB9F7825261542F600FA362A /* IndoorMapViewController+LocationManagerDelegate.swift in Sources */,
 				DB9D00B9261547C20025269D /* CreateUserUseCase.swift in Sources */,
 				DBE85027261D3F1600C848C3 /* BuildingAmplifyAPI.swift in Sources */,
+				DB01EDB42630FF80001CA346 /* IoTUseCases.swift in Sources */,
 				DB9F7816261542F600FA362A /* Styles.swift in Sources */,
 				DB9D00B4261547C20025269D /* MobileUserAmplifyAPI.swift in Sources */,
 				DBE85002261D2B3400C848C3 /* AmplifyModels.swift in Sources */,

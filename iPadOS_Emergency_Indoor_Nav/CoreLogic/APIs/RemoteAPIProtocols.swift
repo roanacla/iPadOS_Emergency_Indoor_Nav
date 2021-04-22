@@ -35,6 +35,7 @@ protocol EdgeRemoteAPI {
 
 protocol IoTRemoteAPI {
   func create(id: String, name: String, number: Int, latitude: Double, longitud: Double) -> AnyCancellable
+  func list(buildingId: String) -> AnyPublisher<[Edge],Error>
 }
 
 protocol MobileUserRemoteAPI {

@@ -8,38 +8,33 @@
 import UIKit
 import Combine
 
-class IoTSettingsTVC: UITableViewController {
+class SettingsTVC: UITableViewController {
   //MARK: - Properties
   private var combineSubscribers = Set<AnyCancellable>()
-  private var edges: [Edge] = []
+  private var edges: [Edge] = [] {
+    didSet {
+      tableView.reloadData()
+    }
+  }
+  private var viewModel: SettingsViewModel!
   
   //MARK: - IBOutlets
   @IBOutlet weak var alertSwitch: UISwitch!
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.viewModel = SettingsViewModel(remoteAPI: EdgeAmplifyAPI())
     loadIoTs()
     tableView.register(UINib(nibName: "AlertCell", bundle: nil), forCellReuseIdentifier: "AlertCell")
     tableView.register(UINib(nibName: "IoTCell", bundle: nil), forCellReuseIdentifier: "IoTCell")
   }
+
   
-  // MARK: - Functions
   func loadIoTs() {
-    let remoteAPI = IoTAmplifyAPI()
-    let subscription = remoteAPI.list(buildingId: "id001")
-    subscription.sink { (completion) in
-      switch completion {
-      case .finished:
-        print("🟢 All IoTs retrieved")
-      case .failure(let error):
-        print("🔴 Failure to retrieve IoTs\(error.localizedDescription)")
-      }
-    } receiveValue: { [weak self] (edges) in
-      self?.edges = edges
-      DispatchQueue.main.async {
-        self?.tableView.reloadData()
-      }
-    }.store(in: &combineSubscribers)
+    viewModel.fetchIoTs(with: "id001")
+    viewModel.$edges
+      .receive(on: DispatchQueue.main)
+      .assign(to: \.edges, on: self).store(in: &combineSubscribers)
   }
   // MARK: - IBActions
   
@@ -90,7 +85,7 @@ class IoTSettingsTVC: UITableViewController {
 
 }
 
-extension IoTSettingsTVC: AlertTableViewCellDelegate {
+extension SettingsTVC: AlertTableViewCellDelegate {
   func didSwitched(cell: AlertTableViewCell, uiSwitch: UISwitch) {
     let isInEmergency = uiSwitch.isOn
     BuildingUseCase()
@@ -99,8 +94,10 @@ extension IoTSettingsTVC: AlertTableViewCellDelegate {
   }
 }
 
-extension IoTSettingsTVC: IoTTableViewCellDelegate {
+extension SettingsTVC: IoTTableViewCellDelegate {
   func ioTCelldidSwitched(cell: IoTTableViewCell, uiSwitch: UISwitch) {
-    let isActive = uiSwitch.isOn
+    guard let indexPath = tableView.indexPath(for: cell) else { return }
+    viewModel.updateEdge(atIndex: indexPath.row,
+                         isActive: uiSwitch.isOn)
   }
 }

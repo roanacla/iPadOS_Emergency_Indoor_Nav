@@ -8,8 +8,6 @@
 import Foundation
 import Combine
 
-
-
 protocol BuildingRemoteAPI {
   //Subscriptions
   func create(id: String) -> AnyCancellable
@@ -31,11 +29,12 @@ protocol EdgeRemoteAPI {
               name: String,
               latitude: Double,
               longitude: Double) -> AnyCancellable
+  func list(buildingId: String) -> AnyPublisher<[Edge],Error>
+  func updateIoT(edgeId: String, isActive: Bool) -> AnyPublisher<Edge,Error>
 }
 
 protocol IoTRemoteAPI {
   func create(id: String, name: String, number: Int, latitude: Double, longitud: Double) -> AnyCancellable
-  func list(buildingId: String) -> AnyPublisher<[Edge],Error>
 }
 
 protocol MobileUserRemoteAPI {

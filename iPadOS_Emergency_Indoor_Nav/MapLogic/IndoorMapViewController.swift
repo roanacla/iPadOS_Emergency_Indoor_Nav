@@ -73,11 +73,6 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    //TODO: Use just to pin locations - Delete for production
-//    let longPressRecogniser = UILongPressGestureRecognizer(target: self, action: #selector(IndoorMapViewController.handleLongPress(_:)))
-//    longPressRecogniser.minimumPressDuration = 1.0
-//    mapView.addGestureRecognizer(longPressRecogniser)
-    
     // Request location authorization so the user's current location can be displayed on the map
     locationManager.requestWhenInUseAuthorization()
     locationManager.delegate = self
@@ -164,19 +159,6 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
       }
     }
   }
-  
-  //TODO: Use just to pin locations - Delete for production
-//  @objc func handleLongPress(_ gestureRecognizer : UIGestureRecognizer){
-//      if gestureRecognizer.state != .began { return }
-//
-//      let touchPoint = gestureRecognizer.location(in: mapView)
-//      let touchMapCoordinate = mapView.convert(touchPoint, toCoordinateFrom: mapView)
-//    print("🧭")
-//      print(touchMapCoordinate)
-//    let newPin = MKPointAnnotation()
-//    newPin.coordinate = touchMapCoordinate
-//    mapView.addAnnotation(newPin)
-//  }
   
   deinit {
     subscriptions.removeAll()
@@ -358,30 +340,6 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
     
     let safeAreaPolygon = MKPolygon(coordinates: &points, count: points.count)  
     mapView.addOverlay(safeAreaPolygon)
-  }
-  
-  func subscribeToBuilding() {
-    buildingPublisher?
-      .sink(receiveCompletion: { (completion) in
-        switch completion {
-        case .finished:
-          print("🟢 Building with nested objects retrieved for IndoorMapViewController))")
-          print(self.blockedAreas.count)
-          DispatchQueue.main.async {
-            self.mapView.addAnnotations(self.blockedAreas)
-          }
-        case .failure(let error):
-          print("🔴 Failure to retrieve Building with nested objects \(error.localizedDescription)")
-        }
-      }, receiveValue: { [weak self] (building) in
-        guard let self = self else { return }
-        self.edges = Array(building.edges!)
-        for edge in self.edges {
-          guard let latitude = edge.latitude, let longitude = edge.longitude else { continue }
-          self.blockedAreas.append(BlockedArea(latitude: latitude, longitude: longitude, name: edge.name, isActive: edge.isActive))
-        }
-      })
-      .store(in: &subscriptions)
   }
   
   // MARK: - LevelPickerDelegate

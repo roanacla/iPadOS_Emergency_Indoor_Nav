@@ -29,7 +29,8 @@ class SettingsTVC: UITableViewController {
     tableView.register(UINib(nibName: "IoTCell", bundle: nil), forCellReuseIdentifier: "IoTCell")
     viewModel.$edges
       .receive(on: DispatchQueue.main)
-      .assign(to: \.edges, on: self).store(in: &combineSubscribers)
+      .assign(to: \.edges, on: self)
+      .store(in: &combineSubscribers)
   }
   
   // MARK: - IBActions
@@ -59,7 +60,7 @@ class SettingsTVC: UITableViewController {
       return cell
     case 1:
       let cell = tableView.dequeueReusableCell(withIdentifier: "IoTCell", for: indexPath) as! IoTTableViewCell
-      cell.cellLabel.text = self.edges[indexPath.row].name?.replacingOccurrences(of: "B-", with: "Area ")
+      cell.cellLabel.text = self.edges[indexPath.row].name
       cell.iotSwitch.isOn = self.edges[indexPath.row].isActive
       cell.delegate = self
       return cell
@@ -73,7 +74,7 @@ class SettingsTVC: UITableViewController {
     case 0:
       return "Alarm Details"
     case 1:
-      return "Iot Devices"
+      return "Compromized Zones"
     default:
       return nil
     }

@@ -58,6 +58,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func loadIoTs() {
     viewModel.fetchIoTs(with: "id001")
   }
-  
-  
 }

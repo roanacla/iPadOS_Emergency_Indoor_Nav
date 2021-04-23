@@ -48,21 +48,7 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
   private var viewModel: SettingsViewModel = {
     return (UIApplication.shared.delegate as! AppDelegate).viewModel
   }()
-  private var edges: [Edge] = [] {
-    didSet {
-      self.blockedAreas = []
-      for edge in self.edges {
-        guard let latitude = edge.latitude, let longitude = edge.longitude else { continue }
-        self.blockedAreas.append(BlockedArea(latitude: latitude, longitude: longitude, name: edge.name, isActive: edge.isActive))
-      }
-      for annotation in self.mapView.annotations {
-        if annotation is BlockedArea {
-          mapView.removeAnnotation(annotation)
-        }
-      }
-      self.mapView.addAnnotations(self.blockedAreas)
-    }
-  }
+  private var edges: [Edge] = []
   var blockedAreas: [BlockedArea] = []
   
   //MARK: - Animation Properties
@@ -138,13 +124,8 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
     establishCreateSubscription()
     establishDeleteSubscription()
     establishUpdateSubscription()
-    //Get all edges before adding annotations
-//    subscribeToBuilding()
-    
-    viewModel.$edges
-      .receive(on: DispatchQueue.main)
-      .assign(to: \.edges, on: self)
-      .store(in: &subscriptions)
+    getEdges()
+    getCurrentEdgeChanges()
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -181,6 +162,36 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
   func startSafeMode(path: [String]) {
     self.loadDirections(path: path)
     self.pulseLayer = self.startPulsationAnimation()
+  }
+  
+  func getEdges() {
+    viewModel.$edges
+      .receive(on: DispatchQueue.main)
+      .sink(receiveValue: {[weak self] (edges) in
+        guard let self = self else { return }
+        self.blockedAreas = []
+        self.edges = edges
+        for edge in self.edges {
+          guard let latitude = edge.latitude, let longitude = edge.longitude else { continue }
+          self.blockedAreas.append(BlockedArea(latitude: latitude, longitude: longitude, name: edge.name, isActive: edge.isActive))
+        }
+        self.mapView.addAnnotations(self.blockedAreas)
+      })
+      .store(in: &subscriptions)
+  }
+  
+  func getCurrentEdgeChanges() {
+    viewModel.$currentEdge
+      .receive(on: DispatchQueue.main)
+      .sink {[weak self] (edge) in
+        guard let self = self,
+              let edge = edge else { return }
+        let annontation = self.mapView.annotations.first{$0.title == edge.name}!
+        (annontation as? BlockedArea)?.isActive = edge.isActive
+        self.mapView.removeAnnotation(annontation)
+        self.mapView.addAnnotation(annontation)
+      }
+      .store(in: &subscriptions)
   }
   
   private func loadDirections(path: [String]) { //e.i. ["W-10", "W-12", "W-15", "W-16"]

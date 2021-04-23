@@ -16,6 +16,7 @@ extension GraphQLRequest {
         mutation updateEdgeIsActive($id: ID!, $isActive: Boolean!) {
            \(operationName)(input: {id: $id, isActive: $isActive}) {
               id
+              name
               buildingId
               sourceIoTId
               destinationIoTId

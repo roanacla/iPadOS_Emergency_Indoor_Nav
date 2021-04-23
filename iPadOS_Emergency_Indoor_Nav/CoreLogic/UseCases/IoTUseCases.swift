@@ -18,6 +18,8 @@ struct IoTUseCases {
 
 class SettingsViewModel {
   @Published private(set) var edges: [Edge] = []
+  @Published private(set) var currentEdge: Edge?
+  
   var remoteAPI: EdgeRemoteAPI
   var subscriptions = Set<AnyCancellable>()
   
@@ -44,15 +46,17 @@ class SettingsViewModel {
     let edge = edges[index]
     remoteAPI.updateIoT(edgeId: edge.id, isActive: isActive)
       .sink { [weak self](completion) in
+        guard let self = self else { return }
         switch completion {
         case .finished:
           print("🟢 The Edge is been updated.")
         case .failure(let error):
           print("🔴 Failure to update Edge. \(error.localizedDescription)")
-          self?.edges[index].isActive = !isActive
+          self.edges[index].isActive = !isActive
         }
       } receiveValue: { [weak self] (edge) in
-        self?.edges[index].isActive = edge.isActive
+        self?.currentEdge = edge
+        
       }
       .store(in: &subscriptions)
   }

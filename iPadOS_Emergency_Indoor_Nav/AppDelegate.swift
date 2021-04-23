@@ -13,8 +13,8 @@ import Combine
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
   
-  var edgesPublisher: AnyPublisher<[Edge],Error>?
   var buildingPublisher: AnyPublisher<Building,Error>?
+  var viewModel: SettingsViewModel!
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     
@@ -23,10 +23,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       try Amplify.add(plugin: AWSCognitoAuthPlugin())
       try Amplify.add(plugin: AWSAPIPlugin(modelRegistration: AmplifyModels()))
       try Amplify.configure()
+      viewModel = SettingsViewModel(remoteAPI: EdgeAmplifyAPI())
+      loadIoTs()
     } catch {
       print("An error occurred setting up Amplify: \(error)")
     }
-//    self.edgesPublisher = self.getAllEdges()
+
     self.buildingPublisher = self.getBuildingWithNestedObjects()
     //Use the following line only to populate data on the cloud for the first time
 //    DataUploader.shared.uploadData()
@@ -47,15 +49,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
   }
   
-  var combineSubscribers = Set<AnyCancellable>()
-  
-  func getAllEdges() -> AnyPublisher<[Edge],Error> {
-    return BuildingUseCase().getAllEdges(remoteAPI: BuildingAmplifyAPI(),
-                                         buildingId: "id001")
-  }
-  
   func getBuildingWithNestedObjects() -> AnyPublisher<Building,Error> {
     return BuildingUseCase().getBuildingWithNestedObjects(remoteAPI: BuildingAmplifyAPI(),
                                                           buildingId: "id001")
   }
+  
+  var combineSubscribers = Set<AnyCancellable>()
+  func loadIoTs() {
+    viewModel.fetchIoTs(with: "id001")
+  }
+  
+  
 }

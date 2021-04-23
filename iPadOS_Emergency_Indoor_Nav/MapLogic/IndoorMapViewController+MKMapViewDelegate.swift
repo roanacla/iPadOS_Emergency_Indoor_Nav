@@ -67,8 +67,8 @@ extension IndoorMapViewController: MKMapViewDelegate {
       } else {
         annotationView?.annotation = blockedArea
       }
-      annotationView?.glyphText = "✅"
-      annotationView?.markerTintColor = UIColor.systemGreen
+      annotationView?.glyphText = blockedArea.isActive ? "🔥" : "✅"
+      annotationView?.markerTintColor = blockedArea.isActive ? UIColor.systemRed : UIColor.systemGreen
       
       return annotationView
     }

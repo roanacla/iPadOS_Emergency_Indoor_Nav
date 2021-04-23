@@ -45,7 +45,24 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
   private var buildingPublisher: AnyPublisher<Building, Error>? {
     return (UIApplication.shared.delegate as? AppDelegate)?.buildingPublisher
   }
-  private var edges: [Edge] = []
+  private var viewModel: SettingsViewModel = {
+    return (UIApplication.shared.delegate as! AppDelegate).viewModel
+  }()
+  private var edges: [Edge] = [] {
+    didSet {
+      self.blockedAreas = []
+      for edge in self.edges {
+        guard let latitude = edge.latitude, let longitude = edge.longitude else { continue }
+        self.blockedAreas.append(BlockedArea(latitude: latitude, longitude: longitude, name: edge.name, isActive: edge.isActive))
+      }
+      for annotation in self.mapView.annotations {
+        if annotation is BlockedArea {
+          mapView.removeAnnotation(annotation)
+        }
+      }
+      self.mapView.addAnnotations(self.blockedAreas)
+    }
+  }
   var blockedAreas: [BlockedArea] = []
   
   //MARK: - Animation Properties
@@ -127,7 +144,12 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
     establishDeleteSubscription()
     establishUpdateSubscription()
     //Get all edges before adding annotations
-    subscribeToBuilding()
+//    subscribeToBuilding()
+    
+    viewModel.$edges
+      .receive(on: DispatchQueue.main)
+      .assign(to: \.edges, on: self)
+      .store(in: &subscriptions)
   }
   
   override func viewDidAppear(_ animated: Bool) {

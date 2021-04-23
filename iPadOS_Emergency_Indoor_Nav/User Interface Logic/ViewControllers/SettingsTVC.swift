@@ -16,26 +16,22 @@ class SettingsTVC: UITableViewController {
       tableView.reloadData()
     }
   }
-  private var viewModel: SettingsViewModel!
+  private var viewModel: SettingsViewModel = {
+    return (UIApplication.shared.delegate as! AppDelegate).viewModel
+  }()
   
   //MARK: - IBOutlets
   @IBOutlet weak var alertSwitch: UISwitch!
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.viewModel = SettingsViewModel(remoteAPI: EdgeAmplifyAPI())
-    loadIoTs()
     tableView.register(UINib(nibName: "AlertCell", bundle: nil), forCellReuseIdentifier: "AlertCell")
     tableView.register(UINib(nibName: "IoTCell", bundle: nil), forCellReuseIdentifier: "IoTCell")
-  }
-
-  
-  func loadIoTs() {
-    viewModel.fetchIoTs(with: "id001")
     viewModel.$edges
       .receive(on: DispatchQueue.main)
       .assign(to: \.edges, on: self).store(in: &combineSubscribers)
   }
+  
   // MARK: - IBActions
   
   // MARK: - Table view data source

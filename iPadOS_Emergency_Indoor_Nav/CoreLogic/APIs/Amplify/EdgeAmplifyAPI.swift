@@ -9,7 +9,31 @@ import Foundation
 import Combine
 import Amplify
 
+extension GraphQLRequest {
+  static func updateEdgeIsActive(id: String, isActive: Bool) -> GraphQLRequest<Edge> {
+    let operationName = "updateEdge"
+    let document = """
+        mutation updateEdgeIsActive($id: ID!, $isActive: Boolean!) {
+           \(operationName)(input: {id: $id, isActive: $isActive}) {
+              id
+              buildingId
+              sourceIoTId
+              destinationIoTId
+              isActive
+              canBeDeactivated
+            }
+        }
+        """
+    return GraphQLRequest<Edge>(document: document,
+                                     variables: ["id": id,
+                                                 "isActive": isActive],
+                                     responseType: Edge.self,
+                                     decodePath: operationName)
+  }
+}
+
 class EdgeAmplifyAPI: EdgeRemoteAPI {
+  
   func create(id: String,
               buildingId: String,
               sourceIoTId: String,
@@ -46,5 +70,27 @@ class EdgeAmplifyAPI: EdgeRemoteAPI {
       }
   }
   
+  func list(buildingId: String) -> AnyPublisher<[Edge], Error> {
+    let edge = Edge.keys
+    let predicate = edge.buildingId == buildingId && edge.canBeDeactivated == true
+    let result = Amplify.API
+      .query(request: .list(Edge.self, where: predicate))
+      .resultPublisher
+      .tryMap { result -> [Edge] in
+        return try result.get()
+      }
+      .eraseToAnyPublisher()
+    
+    return result
+  }
+  
+  func updateIoT(edgeId: String, isActive: Bool) -> AnyPublisher<Edge,Error> {
+    Amplify.API.mutate(request: .updateEdgeIsActive(id: edgeId, isActive: isActive))
+      .resultPublisher
+      .tryMap { result -> Edge in
+        return try result.get()
+      }
+      .eraseToAnyPublisher()
+  }
   
 }

@@ -31,20 +31,4 @@ class IoTAmplifyAPI: IoTRemoteAPI {
         }
       }
   }
-  
-  func list(buildingId: String) -> AnyPublisher<[Edge], Error> {
-    let edge = Edge.keys
-    let predicate = edge.buildingId == buildingId && edge.canBeDeactivated == true
-    let result = Amplify.API
-      .query(request: .list(Edge.self, where: predicate))
-      .resultPublisher
-      .tryMap { result -> [Edge] in
-        return try result.get()
-      }
-      .eraseToAnyPublisher()
-    
-    return result
-  }
-  
-  
 }

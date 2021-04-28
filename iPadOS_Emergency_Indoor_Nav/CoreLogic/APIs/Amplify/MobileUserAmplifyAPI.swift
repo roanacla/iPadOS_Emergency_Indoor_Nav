@@ -49,6 +49,21 @@ extension GraphQLRequest {
     """
     return GraphQLRequest<JSONValue>(document: document, responseType: JSONValue.self)
   }
+  
+  static func subscribeToMobileUserCoordinateUpdates() -> GraphQLRequest<MobileUser> {
+    let document = """
+      subscription subscribeToMobileUserCoordinateUpdates {
+        onUpdateMobileUser {
+          id
+          buildingId
+          latitude
+          longitude
+        }
+      }
+    """
+    return GraphQLRequest<MobileUser>(document: document, responseType: MobileUser.self)
+  }
+  
 }
 
 public struct MobileUserAmplifyAPI: MobileUserRemoteAPI {
@@ -110,6 +125,21 @@ public struct MobileUserAmplifyAPI: MobileUserRemoteAPI {
       .eraseToAnyPublisher()
     
     return publisher
+  }
+  
+  func subscribeToCoordinateUpdates() -> AnyPublisher<MobileUser?, Error> {
+//    let tes =  Amplify.API.subscribe(request: .subscribeToMobileUserCoordinateUpdates()).subscriptionDataPublisher
+    return Amplify.API.subscribe(request: .subscribeToMobileUserCoordinateUpdates())
+      .subscriptionDataPublisher
+      .tryMap{ result -> MobileUser? in
+//        let jsonValue = try result.get()
+//        let mobileUserData = try JSONEncoder().encode(jsonValue)
+//        let mobileUser = try JSONDecoder().decode(MobileUser.self, from: mobileUserData)
+        print("🔥")
+        return try result.get()
+      }
+      
+      .eraseToAnyPublisher()
   }
   
   func updateLocation(userID: String, location: String) -> AnyCancellable {

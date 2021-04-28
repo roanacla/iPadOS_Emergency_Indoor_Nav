@@ -73,6 +73,20 @@ extension IndoorMapViewController: MKMapViewDelegate {
       return annotationView
     }
     
+    if let userAnnotation = annotation as? UserAnnotation {
+      var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "UserAnnotation") as? MKMarkerAnnotationView
+      if annotationView == nil {
+        annotationView = MKMarkerAnnotationView(annotation: userAnnotation, reuseIdentifier: "UserAnnotation")
+      } else {
+        annotationView?.annotation = userAnnotation
+      }
+      annotationView?.glyphText = "😰"
+      annotationView?.markerTintColor = UIColor.systemYellow
+      annotationView?.displayPriority = .defaultHigh
+      
+      return annotationView
+    }
+    
     if let stylableFeature = annotation as? StylableFeature {
       if stylableFeature is Occupant {
         let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: labelAnnotationViewIdentifier, for: annotation)

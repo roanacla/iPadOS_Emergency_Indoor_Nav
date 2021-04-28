@@ -50,6 +50,7 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
   }()
   private var edges: [Edge] = []
   var blockedAreas: [BlockedArea] = []
+  var usersAnnotations: [String: UserAnnotation] = [:]
   
   //MARK: - Animation Properties
   var pulseLayer: Pulsing?
@@ -123,9 +124,10 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
       .store(in: &subscriptions)
     establishCreateSubscription()
     establishDeleteSubscription()
-    establishUpdateSubscription()
+//    establishUpdateSubscription()
     getEdges()
     getCurrentEdgeChanges()
+    subscribeToUpdateMobileUserLocation()
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -237,6 +239,10 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
       .sink {
         if case let .failure(error) = $0 {
           print("Got failed event with error \(error)")
+        } else if case .finished = $0 {
+          DispatchQueue.main.async {
+            self.mapView.addAnnotations(Array(self.usersAnnotations.values))
+          }
         }
       }
       receiveValue: { result in
@@ -248,6 +254,12 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
           DispatchQueue.main.async {
             self.peopleInsideLabel.text = "\(numInside)"
             self.peopleOutsideLabel.text = "\(numOutside)"
+          }
+          for mobileUser in mobileUsers {
+            let userAnnotation = UserAnnotation(latitude: mobileUser.latitude ?? 0.0,
+                                                longitude: mobileUser.longitude ?? 0.0,
+                                                name: mobileUser.id)
+            self.usersAnnotations[mobileUser.id] = userAnnotation
           }
         case .failure(let error):
           print("🔴 Got failed result trying to retrive MobileUsers with \(error.errorDescription)")
@@ -314,6 +326,31 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
         print("🔴 Got failed result from update subscription with \(error.errorDescription)")
       }
     }.store(in: &subscriptions)
+  }
+  
+  func subscribeToUpdateMobileUserLocation() {
+    let subscription = Amplify.API.subscribe(request: .subscription(of: MobileUser.self, type: .onUpdate))
+      .subscriptionDataPublisher
+      .sink { (completion) in
+        if case let .failure(error) = completion {
+          print("🔴 Error stablishing Mobile User Coordinate Subscription: \(error)")
+        }
+      } receiveValue: { (result) in
+        if case let .success(mobileUser) = result {
+          if let _ = self.usersAnnotations[mobileUser.id] {
+            DispatchQueue.main.async {
+              self.mapView.removeAnnotation(self.usersAnnotations[mobileUser.id]!)
+              self.usersAnnotations[mobileUser.id]!.latitude = mobileUser.latitude ?? 0
+              self.usersAnnotations[mobileUser.id]!.longitude = mobileUser.longitude ?? 0
+              self.mapView.addAnnotation(self.usersAnnotations[mobileUser.id]!)
+            }
+          }
+          
+        } else if case let .failure(error) = result {
+          print("🔴 Error receiving Mobile User Coordinate Subscription: \(error)")
+        }
+      }
+      .store(in: &subscriptions)
   }
   
   func signInWithWebUI() -> AnyCancellable {

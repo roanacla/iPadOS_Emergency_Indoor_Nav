@@ -43,7 +43,7 @@ protocol MobileUserRemoteAPI {
   func getMobileUser(userID: String) -> AnyCancellable
   func updateLocation(userID: String, location: String) -> AnyCancellable
   func updateDeviceTokenId(userID: String, newToken: String) -> AnyCancellable
-  
+  func subscribeToCoordinateUpdates() -> AnyPublisher<MobileUser?, Error>
   //Publishers
   func getMobileUser(withID id: String) -> AnyPublisher<MobileUser?,Error>
 }

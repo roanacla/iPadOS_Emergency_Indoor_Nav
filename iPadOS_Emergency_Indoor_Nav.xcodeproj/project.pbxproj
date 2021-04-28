@@ -112,6 +112,7 @@
 		DBF412712615560B00FC4A24 /* W-18.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF412492615560B00FC4A24 /* W-18.gpx */; };
 		DBF412722615560B00FC4A24 /* R-G1.gpx in Resources */ = {isa = PBXBuildFile; fileRef = DBF4124A2615560B00FC4A24 /* R-G1.gpx */; };
 		DBF4127A26155CE600FC4A24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBF4127926155CE600FC4A24 /* Assets.xcassets */; };
+		DBFE8A5F2638E16F0036960E /* UserAnnotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFE8A5E2638E16F0036960E /* UserAnnotations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -248,6 +249,7 @@
 		DBF412492615560B00FC4A24 /* W-18.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "W-18.gpx"; sourceTree = "<group>"; };
 		DBF4124A2615560B00FC4A24 /* R-G1.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "R-G1.gpx"; sourceTree = "<group>"; };
 		DBF4127926155CE600FC4A24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DBFE8A5E2638E16F0036960E /* UserAnnotations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAnnotations.swift; sourceTree = "<group>"; };
 		F0B607BDFBC531854E7B643D /* Pods-iPadOS_Emergency_Indoor_Nav-iPadOS_Emergency_Indoor_NavUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iPadOS_Emergency_Indoor_Nav-iPadOS_Emergency_Indoor_NavUITests.debug.xcconfig"; path = "Target Support Files/Pods-iPadOS_Emergency_Indoor_Nav-iPadOS_Emergency_Indoor_NavUITests/Pods-iPadOS_Emergency_Indoor_Nav-iPadOS_Emergency_Indoor_NavUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -357,6 +359,7 @@
 				DB9D00AC261547C20025269D /* RemoteCommands.swift */,
 				DB9D00BF261549AC0025269D /* NameSpaces.swift */,
 				DB075BDE262A536D004971E8 /* BlockedAreas.swift */,
+				DBFE8A5E2638E16F0036960E /* UserAnnotations.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -864,6 +867,7 @@
 				DBBA4D432612ACDE00A30E9F /* AppDelegate.swift in Sources */,
 				DBE84FFE261D2B3400C848C3 /* Building.swift in Sources */,
 				DB6FFF75261FD2E800B75415 /* SettingsTVC.swift in Sources */,
+				DBFE8A5F2638E16F0036960E /* UserAnnotations.swift in Sources */,
 				DB075BDF262A536D004971E8 /* BlockedAreas.swift in Sources */,
 				DB9D0099261546630025269D /* Pulsing.swift in Sources */,
 				DB9F781E261542F600FA362A /* Venue.swift in Sources */,

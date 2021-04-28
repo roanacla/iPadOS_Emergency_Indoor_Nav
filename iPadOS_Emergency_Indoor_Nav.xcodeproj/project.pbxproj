@@ -45,7 +45,6 @@
 		DB9F7822261542F600FA362A /* LocalizedName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7811261542F600FA362A /* LocalizedName.swift */; };
 		DB9F7823261542F600FA362A /* Opening.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7812261542F600FA362A /* Opening.swift */; };
 		DB9F7824261542F600FA362A /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7813261542F600FA362A /* Level.swift */; };
-		DB9F7825261542F600FA362A /* IndoorMapViewController+LocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F7814261542F600FA362A /* IndoorMapViewController+LocationManagerDelegate.swift */; };
 		DBA27C332620C7BA0071C4AB /* AlertCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBA27C322620C7BA0071C4AB /* AlertCell.xib */; };
 		DBA27C382620C9050071C4AB /* AlertTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA27C372620C9050071C4AB /* AlertTableViewCell.swift */; };
 		DBA27C402620D1E70071C4AB /* IoTCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBA27C3F2620D1E70071C4AB /* IoTCell.xib */; };
@@ -176,7 +175,6 @@
 		DB9F7811261542F600FA362A /* LocalizedName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedName.swift; sourceTree = "<group>"; };
 		DB9F7812261542F600FA362A /* Opening.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Opening.swift; sourceTree = "<group>"; };
 		DB9F7813261542F600FA362A /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
-		DB9F7814261542F600FA362A /* IndoorMapViewController+LocationManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IndoorMapViewController+LocationManagerDelegate.swift"; sourceTree = "<group>"; };
 		DBA27C322620C7BA0071C4AB /* AlertCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertCell.xib; sourceTree = "<group>"; };
 		DBA27C372620C9050071C4AB /* AlertTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTableViewCell.swift; sourceTree = "<group>"; };
 		DBA27C3F2620D1E70071C4AB /* IoTCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IoTCell.xib; sourceTree = "<group>"; };
@@ -317,6 +315,8 @@
 			isa = PBXGroup;
 			children = (
 				DB6FFF74261FD2E800B75415 /* SettingsTVC.swift */,
+				DB9F7805261542F600FA362A /* IndoorMapViewController.swift */,
+				DB9F7802261542F600FA362A /* IndoorMapViewController+MKMapViewDelegate.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -400,9 +400,6 @@
 			children = (
 				DB9F7803261542F600FA362A /* Styles.swift */,
 				DB9F7804261542F600FA362A /* IMDFDecoder.swift */,
-				DB9F7805261542F600FA362A /* IndoorMapViewController.swift */,
-				DB9F7802261542F600FA362A /* IndoorMapViewController+MKMapViewDelegate.swift */,
-				DB9F7814261542F600FA362A /* IndoorMapViewController+LocationManagerDelegate.swift */,
 				DB9F7806261542F600FA362A /* Views */,
 				DB9F780A261542F600FA362A /* IMDFModel */,
 			);
@@ -857,7 +854,6 @@
 				DBE8504E261E655A00C848C3 /* CRUDIoTUseCase.swift in Sources */,
 				DBE85000261D2B3400C848C3 /* Edge+Schema.swift in Sources */,
 				DB9F7818261542F600FA362A /* IndoorMapViewController.swift in Sources */,
-				DB9F7825261542F600FA362A /* IndoorMapViewController+LocationManagerDelegate.swift in Sources */,
 				DB9D00B9261547C20025269D /* CreateUserUseCase.swift in Sources */,
 				DBE85027261D3F1600C848C3 /* BuildingAmplifyAPI.swift in Sources */,
 				DB01EDB42630FF80001CA346 /* IoTUseCases.swift in Sources */,

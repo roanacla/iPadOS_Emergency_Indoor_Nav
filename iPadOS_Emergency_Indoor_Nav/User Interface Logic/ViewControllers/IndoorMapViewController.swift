@@ -27,13 +27,6 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
   var createSubscription: GraphQLSubscriptionOperation<MobileUser>?
   var deleteSubscription: GraphQLSubscriptionOperation<MobileUser>?
   var updateSubscription: GraphQLSubscriptionOperation<JSONValue>?
-  var isTrackerEnabled = false {
-    didSet {
-      if isTrackerEnabled {
-        locationManager.startUpdatingLocation()
-      }
-    }
-  }
   var venue: Venue?
   var levels: [Level] = []
   var currentLevelFeatures = [StylableFeature]()
@@ -59,13 +52,6 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    // Request location authorization so the user's current location can be displayed on the map
-    locationManager.requestWhenInUseAuthorization()
-    locationManager.delegate = self
-    locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
-    locationManager.allowsBackgroundLocationUpdates = true
-    locationManager.requestLocation()
     
     self.mapView.delegate = self
     self.mapView.register(PointAnnotationView.self, forAnnotationViewWithReuseIdentifier: pointAnnotationViewIdentifier)
@@ -115,7 +101,6 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
     // Setup the level picker with the shortName of each level
     drawSafeArea()
     
-    mapView.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(self.tapAction)))
 //    signInWithWebUI()
 //      .store(in: &subscriptions)
 //    fetchCurrentAuthSession()
@@ -135,29 +120,11 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
 //    subscribeChanges()
   }
   
-  @objc func tapAction(gesture: UITapGestureRecognizer) {
-    if isTrackerEnabled {
-      DispatchQueue.main.async {
-        self.trackMe(self)
-      }
-    }
-  }
-  
   deinit {
     subscriptions.removeAll()
     createSubscription?.cancel()
     deleteSubscription?.cancel()
     updateSubscription?.cancel()
-  }
-  
-  //MARK: - IBActions
-  @IBAction func locateMe(_ sender: Any) {
-    locationManager.startUpdatingLocation()
-  }
-  
-  @IBAction func trackMe(_ sender: Any) {
-    isTrackerEnabled.toggle()
-    trackMeButton.isSelected = isTrackerEnabled
   }
   
   //MARK: - Functions

@@ -44,7 +44,16 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
   private var edges: [Edge] = []
   var blockedAreas: [BlockedArea] = []
   var usersAnnotations: [String: UserAnnotation] = [:]
-  
+  var peopleInsideSet: Set<String> = [] {
+    didSet {
+      self.peopleInsideLabel.text = "\(peopleInsideSet.count)"
+    }
+  }
+  var peopleOutsideSet: Set<String> = [] {
+    didSet {
+      self.peopleOutsideLabel.text = "\(peopleOutsideSet.count)"
+    }
+  }
   //MARK: - Animation Properties
   var pulseLayer: Pulsing?
   
@@ -216,13 +225,14 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
         switch result {
         case .success(let mobileUsers):
           print("🟢 Successfully retrieved list of MobileUsers: \(mobileUsers)")
-          let numOutside = mobileUsers.filter{ $0.location == "W-16" }.count
-          let numInside = mobileUsers.count - numOutside
-          DispatchQueue.main.async {
-            self.peopleInsideLabel.text = "\(numInside)"
-            self.peopleOutsideLabel.text = "\(numOutside)"
-          }
           for mobileUser in mobileUsers {
+            DispatchQueue.main.async {
+              if mobileUser.location == "W-16" {
+                self.peopleInsideSet.insert(mobileUser.id)
+              } else {
+                self.peopleOutsideSet.insert(mobileUser.id)
+              }
+            }
             let userAnnotation = UserAnnotation(latitude: mobileUser.latitude ?? 0.0,
                                                 longitude: mobileUser.longitude ?? 0.0,
                                                 name: mobileUser.id)
@@ -247,7 +257,6 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
       switch result {
       case .success(let createdMobileUser):
         print("🟢 Successfully got MobileUser from create subscription: \(createdMobileUser)")
-        self.getMobileUsers().store(in: &self.subscriptions)
       case .failure(let error):
         print("🔴 Got failed result from create subscription with \(error.errorDescription)")
       }
@@ -267,7 +276,6 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
       switch result {
       case .success(let createdMobileUser):
         print("🟢 Successfully remove MobileUser from delete subscription: \(createdMobileUser)")
-        self.getMobileUsers().store(in: &self.subscriptions)
       case .failure(let error):
         print("🔴 Got failed result from delete subscription with \(error.errorDescription)")
       }
@@ -288,7 +296,6 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
       switch result {
       case .success(let updatedMobileUser):
         print("🟢 Successfully got MobileUser from update subscription: \(updatedMobileUser)")
-        self.getMobileUsers().store(in: &self.subscriptions)
       case .failure(let error):
         print("🔴 Got failed result from update subscription with \(error.errorDescription)")
       }
@@ -296,7 +303,7 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
   }
   
   func subscribeToUpdateMobileUserLocation() {
-    let subscription = Amplify.API.subscribe(request: .subscription(of: MobileUser.self, type: .onUpdate))
+    Amplify.API.subscribe(request: .subscription(of: MobileUser.self, type: .onUpdate))
       .subscriptionDataPublisher
       .sink { (completion) in
         if case let .failure(error) = completion {
@@ -306,6 +313,13 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
         if case let .success(mobileUser) = result {
           if let _ = self.usersAnnotations[mobileUser.id] {
             DispatchQueue.main.async {
+              if mobileUser.location == "W-16" {
+                self.peopleInsideSet.remove(mobileUser.id)
+                self.peopleOutsideSet.insert(mobileUser.id)
+              } else {
+                self.peopleInsideSet.insert(mobileUser.id)
+                self.peopleOutsideSet.remove(mobileUser.id)
+              }
               self.mapView.removeAnnotation(self.usersAnnotations[mobileUser.id]!)
               self.usersAnnotations[mobileUser.id]!.latitude = mobileUser.latitude ?? 0
               self.usersAnnotations[mobileUser.id]!.longitude = mobileUser.longitude ?? 0

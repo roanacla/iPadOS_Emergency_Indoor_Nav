@@ -15,10 +15,10 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
   //MARK: - IBOutlets
   @IBOutlet var mapView: MKMapView!
   let locationManager = CLLocationManager()
-  @IBOutlet weak var trackMeButton: UIButton!
   @IBOutlet weak var emergencyKindLabel: UILabel!
   @IBOutlet weak var peopleInsideLabel: UILabel!
   @IBOutlet weak var peopleOutsideLabel: UILabel!
+  @IBOutlet weak var stackView: UIStackView!
   
   
   //MARK: - Properties
@@ -62,6 +62,7 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    self.stackView.layer.cornerRadius = 5
     self.mapView.delegate = self
     self.mapView.register(PointAnnotationView.self, forAnnotationViewWithReuseIdentifier: pointAnnotationViewIdentifier)
     self.mapView.register(LabelAnnotationView.self, forAnnotationViewWithReuseIdentifier: labelAnnotationViewIdentifier)
@@ -228,9 +229,9 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
           for mobileUser in mobileUsers {
             DispatchQueue.main.async {
               if mobileUser.location == "W-16" {
-                self.peopleInsideSet.insert(mobileUser.id)
+                self.peopleOutsideSet.insert(mobileUser.id)                
               } else {
-                self.peopleOutsideSet.insert(mobileUser.id)
+                self.peopleInsideSet.insert(mobileUser.id)
               }
             }
             let userAnnotation = UserAnnotation(latitude: mobileUser.latitude ?? 0.0,
@@ -313,12 +314,14 @@ class IndoorMapViewController: UIViewController, LevelPickerDelegate {
         if case let .success(mobileUser) = result {
           if let _ = self.usersAnnotations[mobileUser.id] {
             DispatchQueue.main.async {
-              if mobileUser.location == "W-16" {
-                self.peopleInsideSet.remove(mobileUser.id)
-                self.peopleOutsideSet.insert(mobileUser.id)
-              } else {
-                self.peopleInsideSet.insert(mobileUser.id)
-                self.peopleOutsideSet.remove(mobileUser.id)
+              if let location = mobileUser.location {
+                if location == "W-16" {
+                  self.peopleInsideSet.remove(mobileUser.id)
+                  self.peopleOutsideSet.insert(mobileUser.id)
+                } else {
+                  self.peopleInsideSet.insert(mobileUser.id)
+                  self.peopleOutsideSet.remove(mobileUser.id)
+                }
               }
               self.mapView.removeAnnotation(self.usersAnnotations[mobileUser.id]!)
               self.usersAnnotations[mobileUser.id]!.latitude = mobileUser.latitude ?? 0

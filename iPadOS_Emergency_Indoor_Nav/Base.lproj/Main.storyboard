@@ -13,49 +13,51 @@
             <objects>
                 <viewController id="jIk-t7-bGU" customClass="IndoorMapViewController" customModule="iPadOS_Emergency_Indoor_Nav" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H1g-14-mc7">
-                        <rect key="frame" x="0.0" y="0.0" width="873.5" height="834"/>
+                        <rect key="frame" x="0.0" y="0.0" width="873" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsBuildings="NO" showsCompass="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4K-rs-cp3">
                                 <rect key="frame" x="0.0" y="0.0" width="873.5" height="834"/>
                             </mapView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nYz-4G-daq">
-                                <rect key="frame" x="659.5" y="80" width="184" height="270"/>
+                                <rect key="frame" x="625.5" y="80" width="218" height="270"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emergency kind:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BaN-33-gGB">
-                                        <rect key="frame" x="0.0" y="0.0" width="184" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="218" height="30"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3D-zv-eO8">
-                                        <rect key="frame" x="0.0" y="30" width="184" height="60"/>
+                                        <rect key="frame" x="0.0" y="30" width="218" height="60"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="50"/>
-                                        <color key="textColor" systemColor="secondaryLabelColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="People inside:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beQ-wJ-dBJ">
-                                        <rect key="frame" x="0.0" y="90" width="184" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="People in danger:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXf-7F-DcN">
+                                        <rect key="frame" x="0.0" y="90" width="218" height="30"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICF-S4-ygC">
-                                        <rect key="frame" x="0.0" y="120" width="184" height="60"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="50"/>
-                                        <color key="textColor" systemColor="secondaryLabelColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="People outside:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXf-7F-DcN">
-                                        <rect key="frame" x="0.0" y="180" width="184" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZV-Mk-xVe">
-                                        <rect key="frame" x="0.0" y="210" width="184" height="60"/>
+                                        <rect key="frame" x="0.0" y="120" width="218" height="60"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="50"/>
-                                        <color key="textColor" systemColor="secondaryLabelColor"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="People in safe zone:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beQ-wJ-dBJ">
+                                        <rect key="frame" x="0.0" y="180" width="218" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                        <color key="textColor" systemColor="systemGreenColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICF-S4-ygC">
+                                        <rect key="frame" x="0.0" y="210" width="218" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="50"/>
+                                        <color key="textColor" systemColor="systemGreenColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <color key="backgroundColor" systemColor="quaternaryLabelColor"/>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LcF-hw-17O"/>
@@ -72,8 +74,9 @@
                     <connections>
                         <outlet property="emergencyKindLabel" destination="b3D-zv-eO8" id="1us-Kw-IkE"/>
                         <outlet property="mapView" destination="S4K-rs-cp3" id="bGL-8j-izF"/>
-                        <outlet property="peopleInsideLabel" destination="ICF-S4-ygC" id="prz-Vg-WJ9"/>
-                        <outlet property="peopleOutsideLabel" destination="rZV-Mk-xVe" id="xcd-kE-DSG"/>
+                        <outlet property="peopleInsideLabel" destination="rZV-Mk-xVe" id="myF-WC-bqh"/>
+                        <outlet property="peopleOutsideLabel" destination="ICF-S4-ygC" id="isR-FA-9nm"/>
+                        <outlet property="stackView" destination="nYz-4G-daq" id="67j-BN-esd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J4m-Ma-OBv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -130,11 +133,17 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="secondaryLabelColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="quaternaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.17999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

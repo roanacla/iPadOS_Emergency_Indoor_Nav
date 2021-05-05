@@ -28,7 +28,8 @@ protocol EdgeRemoteAPI {
               canBeDeactivated: Bool,
               name: String,
               latitude: Double,
-              longitude: Double) -> AnyCancellable
+              longitude: Double,
+              hasWindows: Bool) -> AnyCancellable
   func list(buildingId: String) -> AnyPublisher<[Edge],Error>
   func updateIoT(edgeId: String, isActive: Bool) -> AnyPublisher<Edge,Error>
 }

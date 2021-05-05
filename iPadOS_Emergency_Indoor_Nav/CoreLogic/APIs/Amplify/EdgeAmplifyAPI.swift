@@ -43,7 +43,8 @@ class EdgeAmplifyAPI: EdgeRemoteAPI {
               canBeDeactivated: Bool,
               name: String,
               latitude: Double,
-              longitude: Double) -> AnyCancellable {
+              longitude: Double,
+              hasWindows: Bool) -> AnyCancellable {
     let edge = Edge(id: id,
                     buildingId: buildingId,
                     sourceIoTId: sourceIoTId,
@@ -52,7 +53,8 @@ class EdgeAmplifyAPI: EdgeRemoteAPI {
                     canBeDeactivated: canBeDeactivated,
                     name: name,
                     latitude: latitude,
-                    longitude: longitude)
+                    longitude: longitude,
+                    hasWindows: hasWindows)
     
     
     return Amplify.API.mutate(request: .create(edge))
